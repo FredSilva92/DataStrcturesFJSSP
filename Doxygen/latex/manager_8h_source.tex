@@ -1,0 +1,27 @@
+\hypertarget{manager_8h_source}{}\doxysection{manager.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}dataStructures.h"{}}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef MANAGERDEFINED}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* addOperation(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \mbox{\hyperlink{struct_operation}{Operation}} operation);}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* removeOperation(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* changeOperation(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* machines, \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* changeOperationMachine(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} time);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} getMinTimeJob(\mbox{\hyperlink{struct_job}{Job}} job);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} getMaxTimeJob(\mbox{\hyperlink{struct_job}{Job}} job);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keywordtype}{float} getAverageTimeOperation(\mbox{\hyperlink{struct_operation}{Operation}} operation);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* addOperationMachine(\mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* operationMachines, \mbox{\hyperlink{struct_operation_machine}{OperationMachine}} opMachine);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define MANAGERDEFINED 1}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

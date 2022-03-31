@@ -1,0 +1,27 @@
+\hypertarget{persistance_8h_source}{}\doxysection{persistance.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}dataStructures.h"{}}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_file}{OperationFile}} \{}
+\DoxyCodeLine{4     \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{5     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{6 \} \mbox{\hyperlink{struct_operation_file}{OperationFile}};}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_machine_file}{OperationMachineFile}} \{}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} jobId;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} time;}
+\DoxyCodeLine{13 \} \mbox{\hyperlink{struct_operation_machine_file}{OperationMachineFile}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keywordtype}{void} saveJobsToFile(\mbox{\hyperlink{struct_job_node}{JobNode}}* jobs);}
+\DoxyCodeLine{16 \mbox{\hyperlink{struct_job_node}{JobNode}}* readJobsFromFile();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keywordtype}{void} saveOperationsToFile(\mbox{\hyperlink{struct_job}{Job}} job);}
+\DoxyCodeLine{19 \mbox{\hyperlink{struct_operation_node}{OperationNode}}* readOperationsFromFile(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keywordtype}{void} saveOperationMachinesToFile(\mbox{\hyperlink{struct_job}{Job}} job);}
+\DoxyCodeLine{22 \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* readOperationMachinesFromFile(\textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{char}* name);}
+
+\end{DoxyCode}
