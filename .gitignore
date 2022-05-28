@@ -1,4 +1,4 @@
-*.h.gch
-*.out
-*.dSYM
-.vscode/*
+*
+!*.c
+!*.h
+!Doxygen/*
