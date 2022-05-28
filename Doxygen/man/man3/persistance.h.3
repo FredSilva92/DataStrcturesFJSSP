@@ -1,0 +1,183 @@
+.TH "/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.h" 3 "Fri Apr 1 2022" "Version 1.0" "EDA-TP1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'dataStructures\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBJobFile\fP"
+.br
+.RI "Estrutura de um job em ficheiro\&. "
+.ti -1c
+.RI "struct \fBOperationFile\fP"
+.br
+.RI "Estrutura de uma operação em ficheiro\&. "
+.ti -1c
+.RI "struct \fBOperationMachineFile\fP"
+.br
+.RI "Estrutura de uma operação-máquina em ficheiro\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBJobFile\fP \fBJobFile\fP"
+.br
+.RI "Estrutura de um job em ficheiro\&. "
+.ti -1c
+.RI "typedef struct \fBOperationFile\fP \fBOperationFile\fP"
+.br
+.RI "Estrutura de uma operação em ficheiro\&. "
+.ti -1c
+.RI "typedef struct \fBOperationMachineFile\fP \fBOperationMachineFile\fP"
+.br
+.RI "Estrutura de uma operação-máquina em ficheiro\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsaveJobsToFile\fP (\fBJobNode\fP *jobs, char *fileName)"
+.br
+.RI "Guardar os jobs de uma linked list\&. "
+.ti -1c
+.RI "\fBJobNode\fP * \fBreadJobsFromFile\fP (char *fileName)"
+.br
+.RI "Ler os jobs de um ficheiro\&. "
+.ti -1c
+.RI "void \fBsaveOperationsToFile\fP (\fBJob\fP job, char *fileName)"
+.br
+.RI "Guardar as operações num ficheiro\&. "
+.ti -1c
+.RI "\fBOperationNode\fP * \fBreadOperationsFromFile\fP (int id, char *fileName)"
+.br
+.RI "Ler as operações de um ficheiro\&. "
+.ti -1c
+.RI "void \fBsaveOperationMachinesToFile\fP (\fBJob\fP job, char *fileName)"
+.br
+.RI "Guardar as operações-máquina num ficheiro\&. "
+.ti -1c
+.RI "\fBOperationMachineNode\fP * \fBreadOperationMachinesFromFile\fP (int jobId, char *name, char *fileName)"
+.br
+.RI "Ler as operações-máquina de um ficheiro\&. "
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBJobFile\fP \fBJobFile\fP"
+
+.PP
+Estrutura de um job em ficheiro\&. 
+.SS "typedef struct \fBOperationFile\fP \fBOperationFile\fP"
+
+.PP
+Estrutura de uma operação em ficheiro\&. 
+.SS "typedef struct \fBOperationMachineFile\fP \fBOperationMachineFile\fP"
+
+.PP
+Estrutura de uma operação-máquina em ficheiro\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBJobNode\fP * readJobsFromFile (char * fileName)"
+
+.PP
+Ler os jobs de um ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfileName\fP Nome do ficheiro de onde vão ser lidos os jobs 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Operação-máquina 
+.RE
+.PP
+
+.SS "\fBOperationMachineNode\fP * readOperationMachinesFromFile (int jobId, char * name, char * fileName)"
+
+.PP
+Ler as operações-máquina de um ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjobId\fP Id do job onde estão as operações com as respectivas máquinas 
+.br
+\fIname\fP Nome da operação à qual pertencem as operações-máquina 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser lidos as operações-máquina 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list das operações-máquina 
+.RE
+.PP
+
+.SS "\fBOperationNode\fP * readOperationsFromFile (int id, char * fileName)"
+
+.PP
+Ler as operações de um ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP Id do job à qual pertence as operações 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser lidos as operações 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list das operações 
+.RE
+.PP
+
+.SS "void saveJobsToFile (\fBJobNode\fP * jobs, char * fileName)"
+
+.PP
+Guardar os jobs de uma linked list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjobs\fP Referência da head da linked list 
+.br
+\fIfileName\fP Nome do ficheiro onde vão ser persistidos os jobs 
+.RE
+.PP
+
+.SS "void saveOperationMachinesToFile (\fBJob\fP job, char * fileName)"
+
+.PP
+Guardar as operações-máquina num ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjob\fP \fBJob\fP onde estão presente as operações e as respetivas operações-máquina 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser guardadas as operações-máquina 
+.RE
+.PP
+
+.SS "void saveOperationsToFile (\fBJob\fP job, char * fileName)"
+
+.PP
+Guardar as operações num ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjob\fP \fBJob\fP que contem as operações a serem guardadas 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser guardadas as operações 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EDA-TP1 from the source code\&.

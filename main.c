@@ -1,9 +1,18 @@
+/**
+ * @brief	Ficheiro principal da aplicação, com os testes e as funções da aplicação
+ * @file	main.c
+ * @author	Pedro Silva
+ * @email	a20721@alunos.ipca.pt
+ * @date	31/03/2022
+ * @see https://github.com/FredSilva92/EDA-TP1.git
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "dataStructures.h"
 #include "persistance.h"
-#include "manager.h"
+#include "listManager.h"
+#include "hashManager.h"
 
 #define JOBS_FILE "Resources/jobs.bin"
 #define OPERATIONS_FILE "Resources/operations.bin"
@@ -12,6 +21,13 @@
 int main() {
 
     Job job1 = {12, NULL};
+    Job job2 = {22, NULL};
+    Job job3 = {32, NULL};
+    Job job4 = {23, NULL};
+    Job job5 = {92, NULL};
+    Job job6 = {27, NULL};
+    Job job7 = {24, NULL};
+    Job job8 = {20, NULL};
 
     Operation operation1 = {"o1", NULL};
     Operation operation2 = {"o2", NULL};
@@ -56,13 +72,13 @@ int main() {
     job1.operations = addOperation(job1.operations, operation3);
     job1.operations = addOperation(job1.operations, operation4);
 
-    job1.operations = removeOperation(job1.operations, "o4");
-    job1.operations = addOperation(job1.operations, operation4);
+    //job1.operations = removeOperation(job1.operations, "o4");
+    //job1.operations = addOperation(job1.operations, operation4);
 
     OperationMachineNode* newOpMachines = NULL;
     newOpMachines = addOperationMachine(newOpMachines, newOm1o3);
     newOpMachines = addOperationMachine(newOpMachines, newOm2o3);
-
+/*
     job1.operations = changeOperation(job1.operations, newOpMachines, "o3");
 
     job1.operations = changeOperationMachine(job1.operations, "o2", 4, 5);
@@ -92,5 +108,30 @@ int main() {
         operationsFromFile->operation.opMachines = opMachinesFromFile;
 
         operationsFromFile = operationsFromFile->next;
-    }
+    }*/
+
+    JobNode* hashTable[HASH_TABLE_SIZE];
+
+    createHashTable(hashTable, HASH_TABLE_SIZE);
+
+    *hashTable = addHashJob(job1, hashTable);
+    *hashTable = addHashJob(job2, hashTable);
+    *hashTable = addHashJob(job3, hashTable);
+    *hashTable = addHashJob(job4, hashTable);
+    *hashTable = addHashJob(job5, hashTable);
+    *hashTable = addHashJob(job6, hashTable);
+    *hashTable = addHashJob(job7, hashTable);
+    *hashTable = addHashJob(job8, hashTable);
+/*
+    *hashTable = removeHashJob(12, hashTable);
+    *hashTable = removeHashJob(20, hashTable);*/
+
+   Operation op51 = {"o51", NULL};
+
+   *hashTable = addOpOnJob(hashTable, op51, 92);
+   *hashTable = removeOpOnJob(hashTable, "o3", 12);
+
+   *hashTable = editOpOnJob(hashTable, 12, "o2", 4, 5);
+
+    printf("Heelo");
 }

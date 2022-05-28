@@ -1,0 +1,230 @@
+.TH "/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.c" 3 "Fri Apr 1 2022" "Version 1.0" "EDA-TP1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'persistance\&.h'\fP
+.br
+\fC#include 'manager\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "FILE * \fBopenFile\fP (FILE *myFile, char *fileName, char *accessType)"
+.br
+.RI "abrir ficheiros "
+.ti -1c
+.RI "void \fBcloseFile\fP (FILE *myFile)"
+.br
+.RI "Fechar ficheiros\&. "
+.ti -1c
+.RI "\fBOperation\fP \fBgetOperation\fP (char *name)"
+.br
+.RI "Criar uma nova operação\&. "
+.ti -1c
+.RI "\fBOperationMachine\fP \fBgetOperationMachine\fP (int id, int time)"
+.br
+.RI "Criar uma nova operação-máquina\&. "
+.ti -1c
+.RI "void \fBsaveJobsToFile\fP (\fBJobNode\fP *jobs, char *fileName)"
+.br
+.RI "Guardar os jobs de uma linked list\&. "
+.ti -1c
+.RI "\fBJobNode\fP * \fBreadJobsFromFile\fP (char *fileName)"
+.br
+.RI "Ler os jobs de um ficheiro\&. "
+.ti -1c
+.RI "void \fBsaveOperationsToFile\fP (\fBJob\fP job, char *fileName)"
+.br
+.RI "Guardar as operações num ficheiro\&. "
+.ti -1c
+.RI "\fBOperationNode\fP * \fBreadOperationsFromFile\fP (int id, char *fileName)"
+.br
+.RI "Ler as operações de um ficheiro\&. "
+.ti -1c
+.RI "void \fBsaveOperationMachinesToFile\fP (\fBJob\fP job, char *fileName)"
+.br
+.RI "Guardar as operações-máquina num ficheiro\&. "
+.ti -1c
+.RI "\fBOperationMachineNode\fP * \fBreadOperationMachinesFromFile\fP (int jobId, char *name, char *fileName)"
+.br
+.RI "Ler as operações-máquina de um ficheiro\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void closeFile (FILE * myFile)"
+
+.PP
+Fechar ficheiros\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImyFile\fP Referência do ficheiro a abrir 
+.RE
+.PP
+
+.SS "\fBOperation\fP getOperation (char * name)"
+
+.PP
+Criar uma nova operação\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Nome da operação 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Operação 
+.RE
+.PP
+
+.SS "\fBOperationMachine\fP getOperationMachine (int id, int time)"
+
+.PP
+Criar uma nova operação-máquina\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP Id da máquina 
+.br
+\fItime\fP tempo que a operação demora na máquina especifico 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Operação-máquina 
+.RE
+.PP
+
+.SS "FILE * openFile (FILE * myFile, char * fileName, char * accessType)"
+
+.PP
+abrir ficheiros 
+.PP
+\fBParameters\fP
+.RS 4
+\fImyFile\fP Referência do ficheiro a abrir 
+.br
+\fIfileName\fP Nome da operação à qual pertencem as operações-máquina 
+.br
+\fIaccessType\fP Tipo de acesso a estes ficheiros: leitura ou armazenamento 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência do ficheiro aberto 
+.RE
+.PP
+
+.SS "\fBJobNode\fP * readJobsFromFile (char * fileName)"
+
+.PP
+Ler os jobs de um ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfileName\fP Nome do ficheiro de onde vão ser lidos os jobs 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Operação-máquina 
+.RE
+.PP
+
+.SS "\fBOperationMachineNode\fP * readOperationMachinesFromFile (int jobId, char * name, char * fileName)"
+
+.PP
+Ler as operações-máquina de um ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjobId\fP Id do job onde estão as operações com as respectivas máquinas 
+.br
+\fIname\fP Nome da operação à qual pertencem as operações-máquina 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser lidos as operações-máquina 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list das operações-máquina 
+.RE
+.PP
+
+.SS "\fBOperationNode\fP * readOperationsFromFile (int id, char * fileName)"
+
+.PP
+Ler as operações de um ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP Id do job à qual pertence as operações 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser lidos as operações 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list das operações 
+.RE
+.PP
+
+.SS "void saveJobsToFile (\fBJobNode\fP * jobs, char * fileName)"
+
+.PP
+Guardar os jobs de uma linked list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjobs\fP Referência da head da linked list 
+.br
+\fIfileName\fP Nome do ficheiro onde vão ser persistidos os jobs 
+.RE
+.PP
+
+.SS "void saveOperationMachinesToFile (\fBJob\fP job, char * fileName)"
+
+.PP
+Guardar as operações-máquina num ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjob\fP \fBJob\fP onde estão presente as operações e as respetivas operações-máquina 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser guardadas as operações-máquina 
+.RE
+.PP
+
+.SS "void saveOperationsToFile (\fBJob\fP job, char * fileName)"
+
+.PP
+Guardar as operações num ficheiro\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjob\fP \fBJob\fP que contem as operações a serem guardadas 
+.br
+\fIfileName\fP Nome do ficheiro de onde vão ser guardadas as operações 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EDA-TP1 from the source code\&.

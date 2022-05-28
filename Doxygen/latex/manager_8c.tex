@@ -1,0 +1,229 @@
+\hypertarget{manager_8c}{}\doxysection{/\+Users/fredericosilva/\+Documents/\+IPCA/\+Ano1/\+Semestre2/\+EDA/\+TP/manager.c File Reference}
+\label{manager_8c}\index{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/manager.c@{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/manager.c}}
+
+
+Ficheiro com so funções à gestão de linked list\+: Jobs, Operations, \mbox{\hyperlink{struct_operation_machine}{Operation\+Machine}}.  
+
+
+{\ttfamily \#include \char`\"{}data\+Structures.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manager.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$ \mbox{\hyperlink{manager_8c_a57a74351686dbaef9fc42b7971a8c5c7}{add\+Job}} (\mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$jobs, \mbox{\hyperlink{struct_job}{Job}} job)
+\begin{DoxyCompactList}\small\item\em Adicionar um novo job a uma linked list \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ \mbox{\hyperlink{manager_8c_ab5a5375ac4637303265396ccb55f3df3}{add\+Operation}} (\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$operations, \mbox{\hyperlink{struct_operation}{Operation}} operation)
+\begin{DoxyCompactList}\small\item\em Adicionar uma nova operação a uma linked list \mbox{\hyperlink{struct_operation}{Operation}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ \mbox{\hyperlink{manager_8c_a4a821de34a23a39458d1bb99d3aa452c}{remove\+Operation}} (\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$operations, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Remover uma nova operação a uma linked list \mbox{\hyperlink{struct_operation}{Operation}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ \mbox{\hyperlink{manager_8c_af50994250264ee1329c48c99ab5740dc}{change\+Operation}} (\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$operations, \mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$machines, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Alterar uma linked list operação-\/máquina de uma operação. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ \mbox{\hyperlink{manager_8c_a7db73c3fa59348a8625178249fce6973}{change\+Operation\+Machine}} (\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$operations, char $\ast$name, int id, int time)
+\begin{DoxyCompactList}\small\item\em Alterar o tempo de uma máquina especifico em uma operação. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$ \mbox{\hyperlink{manager_8c_abe1a82c8cc432a55db4534e5f1a0ab2b}{add\+Operation\+Machine}} (\mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$operation\+Machines, \mbox{\hyperlink{struct_operation_machine}{Operation\+Machine}} op\+Machine)
+\begin{DoxyCompactList}\small\item\em Adicionar uma operação máquina. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{manager_8c_ad4ba699858bd0f652a7ad29d4c0474a1}{get\+Min\+Time\+Job}} (\mbox{\hyperlink{struct_job}{Job}} job)
+\begin{DoxyCompactList}\small\item\em Calcular o tempo minimo de execução de um job. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{manager_8c_ab63df320e8f1816cfdf99878003cc483}{get\+Max\+Time\+Job}} (\mbox{\hyperlink{struct_job}{Job}} job)
+\begin{DoxyCompactList}\small\item\em Calcular o tempo máximo de execução de uma job. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{manager_8c_a821ab02898d54b5d2e623ae40e752d11}{get\+Average\+Time\+Operation}} (\mbox{\hyperlink{struct_operation}{Operation}} operation)
+\begin{DoxyCompactList}\small\item\em Calcular o tempo das média das máquinas de uma operação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro com so funções à gestão de linked list\+: Jobs, Operations, \mbox{\hyperlink{struct_operation_machine}{Operation\+Machine}}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Silva @email \href{mailto:a20721@alunos.ipca.pt}{\texttt{ a20721@alunos.\+ipca.\+pt}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+31/03/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{manager_8c_a57a74351686dbaef9fc42b7971a8c5c7}\label{manager_8c_a57a74351686dbaef9fc42b7971a8c5c7}} 
+\index{manager.c@{manager.c}!addJob@{addJob}}
+\index{addJob@{addJob}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$ add\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$}]{jobs,  }\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job }\end{DoxyParamCaption})}
+
+
+
+Adicionar um novo job a uma linked list \mbox{\hyperlink{struct_job}{Job}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jobs} & Referência da head da linked list \\
+\hline
+{\em job} & \mbox{\hyperlink{struct_job}{Job}} a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_ab5a5375ac4637303265396ccb55f3df3}\label{manager_8c_ab5a5375ac4637303265396ccb55f3df3}} 
+\index{manager.c@{manager.c}!addOperation@{addOperation}}
+\index{addOperation@{addOperation}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{addOperation()}{addOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ add\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$}]{operations,  }\item[{\mbox{\hyperlink{struct_operation}{Operation}}}]{operation }\end{DoxyParamCaption})}
+
+
+
+Adicionar uma nova operação a uma linked list \mbox{\hyperlink{struct_operation}{Operation}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operations} & Referência da head da linked list \\
+\hline
+{\em operation} & Operação a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_abe1a82c8cc432a55db4534e5f1a0ab2b}\label{manager_8c_abe1a82c8cc432a55db4534e5f1a0ab2b}} 
+\index{manager.c@{manager.c}!addOperationMachine@{addOperationMachine}}
+\index{addOperationMachine@{addOperationMachine}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{addOperationMachine()}{addOperationMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$ add\+Operation\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$}]{operation\+Machines,  }\item[{\mbox{\hyperlink{struct_operation_machine}{Operation\+Machine}}}]{op\+Machine }\end{DoxyParamCaption})}
+
+
+
+Adicionar uma operação máquina. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation\+Machines} & Referência da head da linked list das operações-\/máquina \\
+\hline
+{\em op\+Machine} & operação-\/máquina que se pretende adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list das operações-\/máquina 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_af50994250264ee1329c48c99ab5740dc}\label{manager_8c_af50994250264ee1329c48c99ab5740dc}} 
+\index{manager.c@{manager.c}!changeOperation@{changeOperation}}
+\index{changeOperation@{changeOperation}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{changeOperation()}{changeOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ change\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$}]{operations,  }\item[{\mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$}]{machines,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Alterar uma linked list operação-\/máquina de uma operação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operations} & Referência da head da linked list \\
+\hline
+{\em machines} & Referência da head da linked list \mbox{\hyperlink{struct_operation_machine}{Operation\+Machine}} que vai ser inserida na operação \\
+\hline
+{\em name} & Nome da operação a alterar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list das operações 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_a7db73c3fa59348a8625178249fce6973}\label{manager_8c_a7db73c3fa59348a8625178249fce6973}} 
+\index{manager.c@{manager.c}!changeOperationMachine@{changeOperationMachine}}
+\index{changeOperationMachine@{changeOperationMachine}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{changeOperationMachine()}{changeOperationMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ change\+Operation\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$}]{operations,  }\item[{char $\ast$}]{name,  }\item[{int}]{id,  }\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Alterar o tempo de uma máquina especifico em uma operação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operations} & Referência da head da linked list \\
+\hline
+{\em name} & Nome na qual se encontra a operação-\/maquina a alterar \\
+\hline
+{\em id} & Id da máquina a alterar \\
+\hline
+{\em time} & Novo tempo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list das operações 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_a821ab02898d54b5d2e623ae40e752d11}\label{manager_8c_a821ab02898d54b5d2e623ae40e752d11}} 
+\index{manager.c@{manager.c}!getAverageTimeOperation@{getAverageTimeOperation}}
+\index{getAverageTimeOperation@{getAverageTimeOperation}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{getAverageTimeOperation()}{getAverageTimeOperation()}}
+{\footnotesize\ttfamily float get\+Average\+Time\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation}{Operation}}}]{operation }\end{DoxyParamCaption})}
+
+
+
+Calcular o tempo das média das máquinas de uma operação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \mbox{\hyperlink{struct_job}{Job}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tempo médio de execução de uma máquina 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_ab63df320e8f1816cfdf99878003cc483}\label{manager_8c_ab63df320e8f1816cfdf99878003cc483}} 
+\index{manager.c@{manager.c}!getMaxTimeJob@{getMaxTimeJob}}
+\index{getMaxTimeJob@{getMaxTimeJob}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{getMaxTimeJob()}{getMaxTimeJob()}}
+{\footnotesize\ttfamily int get\+Max\+Time\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job }\end{DoxyParamCaption})}
+
+
+
+Calcular o tempo máximo de execução de uma job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \mbox{\hyperlink{struct_job}{Job}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tempo máximo de execução de uma máquina 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_ad4ba699858bd0f652a7ad29d4c0474a1}\label{manager_8c_ad4ba699858bd0f652a7ad29d4c0474a1}} 
+\index{manager.c@{manager.c}!getMinTimeJob@{getMinTimeJob}}
+\index{getMinTimeJob@{getMinTimeJob}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{getMinTimeJob()}{getMinTimeJob()}}
+{\footnotesize\ttfamily int get\+Min\+Time\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job }\end{DoxyParamCaption})}
+
+
+
+Calcular o tempo minimo de execução de um job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \mbox{\hyperlink{struct_job}{Job}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tempo minimo de execução de uma máquina 
+\end{DoxyReturn}
+\mbox{\Hypertarget{manager_8c_a4a821de34a23a39458d1bb99d3aa452c}\label{manager_8c_a4a821de34a23a39458d1bb99d3aa452c}} 
+\index{manager.c@{manager.c}!removeOperation@{removeOperation}}
+\index{removeOperation@{removeOperation}!manager.c@{manager.c}}
+\doxysubsubsection{\texorpdfstring{removeOperation()}{removeOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ remove\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$}]{operations,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Remover uma nova operação a uma linked list \mbox{\hyperlink{struct_operation}{Operation}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operations} & Referência da head da linked list \\
+\hline
+{\em operation} & Operação a remover \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list 
+\end{DoxyReturn}

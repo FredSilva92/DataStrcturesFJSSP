@@ -1,27 +1,30 @@
 \hypertarget{manager_8h_source}{}\doxysection{manager.\+h}
-
+\label{manager_8h_source}\index{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/manager.h@{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/manager.h}}
+\mbox{\hyperlink{manager_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}dataStructures.h"{}}}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{data_structures_8h}{dataStructures.h}}"{}}}
 \DoxyCodeLine{2 }
 \DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef MANAGERDEFINED}}
 \DoxyCodeLine{4 }
-\DoxyCodeLine{5     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* addOperation(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \mbox{\hyperlink{struct_operation}{Operation}} operation);}
+\DoxyCodeLine{5     \mbox{\hyperlink{struct_job_node}{JobNode}}* \mbox{\hyperlink{manager_8h_a57a74351686dbaef9fc42b7971a8c5c7}{addJob}}(\mbox{\hyperlink{struct_job_node}{JobNode}}* jobs, \mbox{\hyperlink{struct_job}{Job}} job);}
 \DoxyCodeLine{6 }
-\DoxyCodeLine{7     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* removeOperation(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{7     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* \mbox{\hyperlink{manager_8h_ab5a5375ac4637303265396ccb55f3df3}{addOperation}}(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \mbox{\hyperlink{struct_operation}{Operation}} operation);}
 \DoxyCodeLine{8 }
-\DoxyCodeLine{9     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* changeOperation(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* machines, \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{9     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* \mbox{\hyperlink{manager_8h_a4a821de34a23a39458d1bb99d3aa452c}{removeOperation}}(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \textcolor{keywordtype}{char}* name);}
 \DoxyCodeLine{10 }
-\DoxyCodeLine{11     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* changeOperationMachine(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} time);}
+\DoxyCodeLine{11     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* \mbox{\hyperlink{manager_8h_af50994250264ee1329c48c99ab5740dc}{changeOperation}}(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* machines, \textcolor{keywordtype}{char}* name);}
 \DoxyCodeLine{12 }
-\DoxyCodeLine{13     \textcolor{keywordtype}{int} getMinTimeJob(\mbox{\hyperlink{struct_job}{Job}} job);}
+\DoxyCodeLine{13     \mbox{\hyperlink{struct_operation_node}{OperationNode}}* \mbox{\hyperlink{manager_8h_a7db73c3fa59348a8625178249fce6973}{changeOperationMachine}}(\mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations, \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} time);}
 \DoxyCodeLine{14 }
-\DoxyCodeLine{15     \textcolor{keywordtype}{int} getMaxTimeJob(\mbox{\hyperlink{struct_job}{Job}} job);}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} \mbox{\hyperlink{manager_8h_ad4ba699858bd0f652a7ad29d4c0474a1}{getMinTimeJob}}(\mbox{\hyperlink{struct_job}{Job}} job);}
 \DoxyCodeLine{16 }
-\DoxyCodeLine{17     \textcolor{keywordtype}{float} getAverageTimeOperation(\mbox{\hyperlink{struct_operation}{Operation}} operation);}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} \mbox{\hyperlink{manager_8h_ab63df320e8f1816cfdf99878003cc483}{getMaxTimeJob}}(\mbox{\hyperlink{struct_job}{Job}} job);}
 \DoxyCodeLine{18 }
-\DoxyCodeLine{19     \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* addOperationMachine(\mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* operationMachines, \mbox{\hyperlink{struct_operation_machine}{OperationMachine}} opMachine);}
+\DoxyCodeLine{19     \textcolor{keywordtype}{float} \mbox{\hyperlink{manager_8h_a821ab02898d54b5d2e623ae40e752d11}{getAverageTimeOperation}}(\mbox{\hyperlink{struct_operation}{Operation}} operation);}
 \DoxyCodeLine{20 }
-\DoxyCodeLine{21 \textcolor{preprocessor}{\#define MANAGERDEFINED 1}}
-\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21     \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* \mbox{\hyperlink{manager_8h_abe1a82c8cc432a55db4534e5f1a0ab2b}{addOperationMachine}}(\mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* operationMachines, \mbox{\hyperlink{struct_operation_machine}{OperationMachine}} opMachine);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define MANAGERDEFINED 1}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

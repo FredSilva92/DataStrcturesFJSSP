@@ -1,5 +1,13 @@
+/**
+ * @brief	Ficheiro com as funções de persistência: Guardar e ler dados
+ * @file	persistence.c
+ * @author	Pedro Silva
+ * @email	a20721@alunos.ipca.pt
+ * @date	31/03/2022
+*/
+
 #include "persistance.h"
-#include "manager.h"
+#include "listManager.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,6 +17,11 @@
 FILE* openFile(FILE *myFile, char* fileName, char* accessType);
 void closeFile(FILE *myFile);
 
+/**
+* @brief	Criar uma nova operação
+* @param	name	Nome da operação
+* @return	Operação
+*/
 Operation getOperation(char* name) {
     Operation operation = {name};
     //strcpy(operation.name, name);
@@ -16,12 +29,23 @@ Operation getOperation(char* name) {
     return operation;
 };
 
+/**
+* @brief	Criar uma nova operação-máquina
+* @param	id	Id da máquina
+* @param	time	tempo que a operação demora na máquina especifico 
+* @return	Operação-máquina
+*/
 OperationMachine getOperationMachine(int id, int time) {
     OperationMachine operationMachine = {id, time};
 
     return operationMachine;
 }
 
+/**
+* @brief	Guardar os jobs de uma linked list
+* @param	jobs	Referência da head da linked list
+* @param	fileName	Nome do ficheiro onde vão ser persistidos os jobs
+*/
 void saveJobsToFile(JobNode* jobs, char* fileName) {
     FILE *myFile;
 
@@ -43,6 +67,11 @@ void saveJobsToFile(JobNode* jobs, char* fileName) {
     free(ref);
 };
 
+/**
+* @brief	Ler os jobs de um ficheiro 
+* @param	fileName	Nome do ficheiro de onde vão ser lidos os jobs
+* @return	Operação-máquina
+*/
 JobNode* readJobsFromFile(char* fileName) {
     JobNode* head = NULL;
     JobFile* refFromFile = (JobFile*) malloc(sizeof(JobFile));
@@ -59,6 +88,11 @@ JobNode* readJobsFromFile(char* fileName) {
     return head;
 }
 
+/**
+* @brief	Guardar as operações num ficheiro 
+* @param	job	    Job que contem as operações a serem guardadas
+* @param	fileName	Nome do ficheiro de onde vão ser guardadas as operações
+*/
 void saveOperationsToFile(Job job, char* fileName) {
 
     OperationNode* ref = job.operations;
@@ -78,6 +112,12 @@ void saveOperationsToFile(Job job, char* fileName) {
     closeFile(myFile);
 };
 
+/**
+* @brief	Ler as operações de um ficheiro 
+* @param	id	Id do job à qual pertence as operações
+* @param	fileName	Nome do ficheiro de onde vão ser lidos as operações
+* @return	Referência da head da linked list das operações
+*/
 OperationNode* readOperationsFromFile(int id, char* fileName) {
     OperationNode* head = NULL;
     OperationFile* refFromFile = (OperationFile*) malloc(sizeof(OperationFile));
@@ -100,6 +140,11 @@ OperationNode* readOperationsFromFile(int id, char* fileName) {
     return head;
 };
 
+/**
+* @brief	Guardar as operações-máquina num ficheiro 
+* @param	job	Job onde estão presente as operações e as respetivas operações-máquina
+* @param	fileName	Nome do ficheiro de onde vão ser guardadas as operações-máquina
+*/
 void saveOperationMachinesToFile(Job job, char* fileName) {
     OperationNode* operation = job.operations;
     
@@ -132,6 +177,13 @@ void saveOperationMachinesToFile(Job job, char* fileName) {
     closeFile(myFile);
 }
 
+/**
+* @brief	Ler as operações-máquina de um ficheiro 
+* @param	jobId	Id do job onde estão as operações com as respectivas máquinas
+* @param	name	Nome da operação à qual pertencem as operações-máquina
+* @param	fileName	Nome do ficheiro de onde vão ser lidos as operações-máquina
+* @return	Referência da head da linked list das operações-máquina
+*/
 OperationMachineNode* readOperationMachinesFromFile(int jobId, char* name, char* fileName) {
     OperationMachineNode* machines = NULL;
     FILE *myFile;
@@ -153,6 +205,13 @@ OperationMachineNode* readOperationMachinesFromFile(int jobId, char* name, char*
     return machines;
 }
 
+/**
+* @brief	abrir ficheiros
+* @param	myFile	Referência do ficheiro a abrir
+* @param	fileName	Nome da operação à qual pertencem as operações-máquina
+* @param	accessType	Tipo de acesso a estes ficheiros: leitura ou armazenamento
+* @return	Referência do ficheiro aberto
+*/
 FILE* openFile(FILE *myFile, char* fileName, char* accessType) {
     mkdir("./Resources", 0777);
 
@@ -166,6 +225,10 @@ FILE* openFile(FILE *myFile, char* fileName, char* accessType) {
     return myFile;
 };
 
+/**
+* @brief	Fechar ficheiros
+* @param	myFile	Referência do ficheiro a abrir
+*/
 void closeFile(FILE *myFile) {
     if (myFile != NULL) {
         fclose(myFile);

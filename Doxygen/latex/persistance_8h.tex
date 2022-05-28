@@ -1,0 +1,183 @@
+\hypertarget{persistance_8h}{}\doxysection{/\+Users/fredericosilva/\+Documents/\+IPCA/\+Ano1/\+Semestre2/\+EDA/\+TP/persistance.h File Reference}
+\label{persistance_8h}\index{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.h@{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.h}}
+{\ttfamily \#include \char`\"{}data\+Structures.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_job_file}{Job\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura de um job em ficheiro. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_operation_file}{Operation\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura de uma operação em ficheiro. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_operation_machine_file}{Operation\+Machine\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura de uma operação-\/máquina em ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_job_file}{Job\+File}} \mbox{\hyperlink{persistance_8h_a26c88d957828aee55329497a30aff969}{Job\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura de um job em ficheiro. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_operation_file}{Operation\+File}} \mbox{\hyperlink{persistance_8h_aa6ce52777d04f6cdc0eee6c1622624b7}{Operation\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura de uma operação em ficheiro. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_operation_machine_file}{Operation\+Machine\+File}} \mbox{\hyperlink{persistance_8h_ac1f3f2068edc864c1f553e3561439857}{Operation\+Machine\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura de uma operação-\/máquina em ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{persistance_8h_aad0586af08971fc8a5c90956df5b4a4e}{save\+Jobs\+To\+File}} (\mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$jobs, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Guardar os jobs de uma linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$ \mbox{\hyperlink{persistance_8h_a58ceabe14be7f8078b3a68d459878e36}{read\+Jobs\+From\+File}} (char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Ler os jobs de um ficheiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{persistance_8h_a59d3e12c96a28db6c7f6017d84902f3c}{save\+Operations\+To\+File}} (\mbox{\hyperlink{struct_job}{Job}} job, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Guardar as operações num ficheiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ \mbox{\hyperlink{persistance_8h_ae1ac96528a1c406dd1e2b263f391fb3a}{read\+Operations\+From\+File}} (int id, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Ler as operações de um ficheiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{persistance_8h_a73ca6d5f023344e10cb68c54d8b29412}{save\+Operation\+Machines\+To\+File}} (\mbox{\hyperlink{struct_job}{Job}} job, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Guardar as operações-\/máquina num ficheiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$ \mbox{\hyperlink{persistance_8h_a5fc3dcb197831138600d79db3aff7a47}{read\+Operation\+Machines\+From\+File}} (int job\+Id, char $\ast$name, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Ler as operações-\/máquina de um ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{persistance_8h_a26c88d957828aee55329497a30aff969}\label{persistance_8h_a26c88d957828aee55329497a30aff969}} 
+\index{persistance.h@{persistance.h}!JobFile@{JobFile}}
+\index{JobFile@{JobFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{JobFile}{JobFile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_job_file}{Job\+File}} \mbox{\hyperlink{struct_job_file}{Job\+File}}}
+
+
+
+Estrutura de um job em ficheiro. 
+
+\mbox{\Hypertarget{persistance_8h_aa6ce52777d04f6cdc0eee6c1622624b7}\label{persistance_8h_aa6ce52777d04f6cdc0eee6c1622624b7}} 
+\index{persistance.h@{persistance.h}!OperationFile@{OperationFile}}
+\index{OperationFile@{OperationFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{OperationFile}{OperationFile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_operation_file}{Operation\+File}} \mbox{\hyperlink{struct_operation_file}{Operation\+File}}}
+
+
+
+Estrutura de uma operação em ficheiro. 
+
+\mbox{\Hypertarget{persistance_8h_ac1f3f2068edc864c1f553e3561439857}\label{persistance_8h_ac1f3f2068edc864c1f553e3561439857}} 
+\index{persistance.h@{persistance.h}!OperationMachineFile@{OperationMachineFile}}
+\index{OperationMachineFile@{OperationMachineFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{OperationMachineFile}{OperationMachineFile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_operation_machine_file}{Operation\+Machine\+File}} \mbox{\hyperlink{struct_operation_machine_file}{Operation\+Machine\+File}}}
+
+
+
+Estrutura de uma operação-\/máquina em ficheiro. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{persistance_8h_a58ceabe14be7f8078b3a68d459878e36}\label{persistance_8h_a58ceabe14be7f8078b3a68d459878e36}} 
+\index{persistance.h@{persistance.h}!readJobsFromFile@{readJobsFromFile}}
+\index{readJobsFromFile@{readJobsFromFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{readJobsFromFile()}{readJobsFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$ read\+Jobs\+From\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Ler os jobs de um ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Nome do ficheiro de onde vão ser lidos os jobs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Operação-\/máquina 
+\end{DoxyReturn}
+\mbox{\Hypertarget{persistance_8h_a5fc3dcb197831138600d79db3aff7a47}\label{persistance_8h_a5fc3dcb197831138600d79db3aff7a47}} 
+\index{persistance.h@{persistance.h}!readOperationMachinesFromFile@{readOperationMachinesFromFile}}
+\index{readOperationMachinesFromFile@{readOperationMachinesFromFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{readOperationMachinesFromFile()}{readOperationMachinesFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_machine_node}{Operation\+Machine\+Node}} $\ast$ read\+Operation\+Machines\+From\+File (\begin{DoxyParamCaption}\item[{int}]{job\+Id,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Ler as operações-\/máquina de um ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+Id} & Id do job onde estão as operações com as respectivas máquinas \\
+\hline
+{\em name} & Nome da operação à qual pertencem as operações-\/máquina \\
+\hline
+{\em file\+Name} & Nome do ficheiro de onde vão ser lidos as operações-\/máquina \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list das operações-\/máquina 
+\end{DoxyReturn}
+\mbox{\Hypertarget{persistance_8h_ae1ac96528a1c406dd1e2b263f391fb3a}\label{persistance_8h_ae1ac96528a1c406dd1e2b263f391fb3a}} 
+\index{persistance.h@{persistance.h}!readOperationsFromFile@{readOperationsFromFile}}
+\index{readOperationsFromFile@{readOperationsFromFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{readOperationsFromFile()}{readOperationsFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_node}{Operation\+Node}} $\ast$ read\+Operations\+From\+File (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Ler as operações de um ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id do job à qual pertence as operações \\
+\hline
+{\em file\+Name} & Nome do ficheiro de onde vão ser lidos as operações \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência da head da linked list das operações 
+\end{DoxyReturn}
+\mbox{\Hypertarget{persistance_8h_aad0586af08971fc8a5c90956df5b4a4e}\label{persistance_8h_aad0586af08971fc8a5c90956df5b4a4e}} 
+\index{persistance.h@{persistance.h}!saveJobsToFile@{saveJobsToFile}}
+\index{saveJobsToFile@{saveJobsToFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{saveJobsToFile()}{saveJobsToFile()}}
+{\footnotesize\ttfamily void save\+Jobs\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job_node}{Job\+Node}} $\ast$}]{jobs,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Guardar os jobs de uma linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jobs} & Referência da head da linked list \\
+\hline
+{\em file\+Name} & Nome do ficheiro onde vão ser persistidos os jobs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{persistance_8h_a73ca6d5f023344e10cb68c54d8b29412}\label{persistance_8h_a73ca6d5f023344e10cb68c54d8b29412}} 
+\index{persistance.h@{persistance.h}!saveOperationMachinesToFile@{saveOperationMachinesToFile}}
+\index{saveOperationMachinesToFile@{saveOperationMachinesToFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{saveOperationMachinesToFile()}{saveOperationMachinesToFile()}}
+{\footnotesize\ttfamily void save\+Operation\+Machines\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Guardar as operações-\/máquina num ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \mbox{\hyperlink{struct_job}{Job}} onde estão presente as operações e as respetivas operações-\/máquina \\
+\hline
+{\em file\+Name} & Nome do ficheiro de onde vão ser guardadas as operações-\/máquina \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{persistance_8h_a59d3e12c96a28db6c7f6017d84902f3c}\label{persistance_8h_a59d3e12c96a28db6c7f6017d84902f3c}} 
+\index{persistance.h@{persistance.h}!saveOperationsToFile@{saveOperationsToFile}}
+\index{saveOperationsToFile@{saveOperationsToFile}!persistance.h@{persistance.h}}
+\doxysubsubsection{\texorpdfstring{saveOperationsToFile()}{saveOperationsToFile()}}
+{\footnotesize\ttfamily void save\+Operations\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Guardar as operações num ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \mbox{\hyperlink{struct_job}{Job}} que contem as operações a serem guardadas \\
+\hline
+{\em file\+Name} & Nome do ficheiro de onde vão ser guardadas as operações \\
+\hline
+\end{DoxyParams}

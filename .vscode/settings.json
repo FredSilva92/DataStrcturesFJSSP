@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "algorithm": "c",
+        "manager.h": "c",
+        "__locale": "c",
+        "__functional_base": "c",
+        "listmanager.h": "c"
+    }
+}

@@ -1,14 +1,23 @@
 #include "dataStructures.h"
 
+/**
+ * @brief	Estrutura de um job em ficheiro
+ */
 typedef struct JobFile {
     int id;
 } JobFile;
 
+/**
+ * @brief	Estrutura de uma operação em ficheiro
+ */
 typedef struct OperationFile {
     char* name;
     int id;
 } OperationFile;
 
+/**
+ * @brief	Estrutura de uma operação-máquina em ficheiro
+ */
 typedef struct OperationMachineFile {
     int jobId;
     char* name;

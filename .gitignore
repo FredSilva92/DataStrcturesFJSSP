@@ -1,0 +1,4 @@
+*.h.gch
+*.out
+*.dSYM
+.vscode/*

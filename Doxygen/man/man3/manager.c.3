@@ -1,0 +1,248 @@
+.TH "/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/manager.c" 3 "Fri Apr 1 2022" "Version 1.0" "EDA-TP1" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/manager.c \- Ficheiro com so funções à gestão de linked list: Jobs, Operations, \fBOperationMachine\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'dataStructures\&.h'\fP
+.br
+\fC#include 'manager\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJobNode\fP * \fBaddJob\fP (\fBJobNode\fP *jobs, \fBJob\fP job)"
+.br
+.RI "Adicionar um novo job a uma linked list \fBJob\fP\&. "
+.ti -1c
+.RI "\fBOperationNode\fP * \fBaddOperation\fP (\fBOperationNode\fP *operations, \fBOperation\fP operation)"
+.br
+.RI "Adicionar uma nova operação a uma linked list \fBOperation\fP\&. "
+.ti -1c
+.RI "\fBOperationNode\fP * \fBremoveOperation\fP (\fBOperationNode\fP *operations, char *name)"
+.br
+.RI "Remover uma nova operação a uma linked list \fBOperation\fP\&. "
+.ti -1c
+.RI "\fBOperationNode\fP * \fBchangeOperation\fP (\fBOperationNode\fP *operations, \fBOperationMachineNode\fP *machines, char *name)"
+.br
+.RI "Alterar uma linked list operação-máquina de uma operação\&. "
+.ti -1c
+.RI "\fBOperationNode\fP * \fBchangeOperationMachine\fP (\fBOperationNode\fP *operations, char *name, int id, int time)"
+.br
+.RI "Alterar o tempo de uma máquina especifico em uma operação\&. "
+.ti -1c
+.RI "\fBOperationMachineNode\fP * \fBaddOperationMachine\fP (\fBOperationMachineNode\fP *operationMachines, \fBOperationMachine\fP opMachine)"
+.br
+.RI "Adicionar uma operação máquina\&. "
+.ti -1c
+.RI "int \fBgetMinTimeJob\fP (\fBJob\fP job)"
+.br
+.RI "Calcular o tempo minimo de execução de um job\&. "
+.ti -1c
+.RI "int \fBgetMaxTimeJob\fP (\fBJob\fP job)"
+.br
+.RI "Calcular o tempo máximo de execução de uma job\&. "
+.ti -1c
+.RI "float \fBgetAverageTimeOperation\fP (\fBOperation\fP operation)"
+.br
+.RI "Calcular o tempo das média das máquinas de uma operação\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Ficheiro com so funções à gestão de linked list: Jobs, Operations, \fBOperationMachine\fP\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+Pedro Silva @email a20721@alunos.ipca.pt 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+31/03/2022 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBJobNode\fP * addJob (\fBJobNode\fP * jobs, \fBJob\fP job)"
+
+.PP
+Adicionar um novo job a uma linked list \fBJob\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjobs\fP Referência da head da linked list 
+.br
+\fIjob\fP \fBJob\fP a adicionar 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list 
+.RE
+.PP
+
+.SS "\fBOperationNode\fP * addOperation (\fBOperationNode\fP * operations, \fBOperation\fP operation)"
+
+.PP
+Adicionar uma nova operação a uma linked list \fBOperation\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoperations\fP Referência da head da linked list 
+.br
+\fIoperation\fP Operação a adicionar 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list 
+.RE
+.PP
+
+.SS "\fBOperationMachineNode\fP * addOperationMachine (\fBOperationMachineNode\fP * operationMachines, \fBOperationMachine\fP opMachine)"
+
+.PP
+Adicionar uma operação máquina\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoperationMachines\fP Referência da head da linked list das operações-máquina 
+.br
+\fIopMachine\fP operação-máquina que se pretende adicionar 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list das operações-máquina 
+.RE
+.PP
+
+.SS "\fBOperationNode\fP * changeOperation (\fBOperationNode\fP * operations, \fBOperationMachineNode\fP * machines, char * name)"
+
+.PP
+Alterar uma linked list operação-máquina de uma operação\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoperations\fP Referência da head da linked list 
+.br
+\fImachines\fP Referência da head da linked list \fBOperationMachine\fP que vai ser inserida na operação 
+.br
+\fIname\fP Nome da operação a alterar 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list das operações 
+.RE
+.PP
+
+.SS "\fBOperationNode\fP * changeOperationMachine (\fBOperationNode\fP * operations, char * name, int id, int time)"
+
+.PP
+Alterar o tempo de uma máquina especifico em uma operação\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoperations\fP Referência da head da linked list 
+.br
+\fIname\fP Nome na qual se encontra a operação-maquina a alterar 
+.br
+\fIid\fP Id da máquina a alterar 
+.br
+\fItime\fP Novo tempo 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list das operações 
+.RE
+.PP
+
+.SS "float getAverageTimeOperation (\fBOperation\fP operation)"
+
+.PP
+Calcular o tempo das média das máquinas de uma operação\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjob\fP \fBJob\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+tempo médio de execução de uma máquina 
+.RE
+.PP
+
+.SS "int getMaxTimeJob (\fBJob\fP job)"
+
+.PP
+Calcular o tempo máximo de execução de uma job\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjob\fP \fBJob\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Tempo máximo de execução de uma máquina 
+.RE
+.PP
+
+.SS "int getMinTimeJob (\fBJob\fP job)"
+
+.PP
+Calcular o tempo minimo de execução de um job\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIjob\fP \fBJob\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Tempo minimo de execução de uma máquina 
+.RE
+.PP
+
+.SS "\fBOperationNode\fP * removeOperation (\fBOperationNode\fP * operations, char * name)"
+
+.PP
+Remover uma nova operação a uma linked list \fBOperation\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoperations\fP Referência da head da linked list 
+.br
+\fIoperation\fP Operação a remover 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Referência da head da linked list 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EDA-TP1 from the source code\&.

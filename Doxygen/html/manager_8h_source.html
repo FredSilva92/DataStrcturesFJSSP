@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Eda-tp: manager.h Source File</title>
+<title>EDA-TP1: /Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/manager.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Eda-tp
+   <div id="projectname">EDA-TP1<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -46,7 +46,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,37 +60,55 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a92e0b9cd79e7fa25916a68e7ed218a6.html">TP</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">manager.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;dataStructures.h&quot;</span></div>
+<a href="manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="data_structures_8h.html">dataStructures.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef MANAGERDEFINED</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* addOperation(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <a class="code hl_struct" href="struct_operation.html">Operation</a> operation);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <a class="code hl_struct" href="struct_job_node.html">JobNode</a>* <a class="code hl_function" href="manager_8h.html#a57a74351686dbaef9fc42b7971a8c5c7">addJob</a>(<a class="code hl_struct" href="struct_job_node.html">JobNode</a>* jobs, <a class="code hl_struct" href="struct_job.html">Job</a> job);</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* removeOperation(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* <a class="code hl_function" href="manager_8h.html#ab5a5375ac4637303265396ccb55f3df3">addOperation</a>(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <a class="code hl_struct" href="struct_operation.html">Operation</a> operation);</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* changeOperation(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <a class="code hl_struct" href="struct_operation_machine_node.html">OperationMachineNode</a>* machines, <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* <a class="code hl_function" href="manager_8h.html#a4a821de34a23a39458d1bb99d3aa452c">removeOperation</a>(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <span class="keywordtype">char</span>* name);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* changeOperationMachine(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> time);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* <a class="code hl_function" href="manager_8h.html#af50994250264ee1329c48c99ab5740dc">changeOperation</a>(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <a class="code hl_struct" href="struct_operation_machine_node.html">OperationMachineNode</a>* machines, <span class="keywordtype">char</span>* name);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> getMinTimeJob(<a class="code hl_struct" href="struct_job.html">Job</a> job);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* <a class="code hl_function" href="manager_8h.html#a7db73c3fa59348a8625178249fce6973">changeOperationMachine</a>(<a class="code hl_struct" href="struct_operation_node.html">OperationNode</a>* operations, <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> time);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> getMaxTimeJob(<a class="code hl_struct" href="struct_job.html">Job</a> job);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="manager_8h.html#ad4ba699858bd0f652a7ad29d4c0474a1">getMinTimeJob</a>(<a class="code hl_struct" href="struct_job.html">Job</a> job);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">float</span> getAverageTimeOperation(<a class="code hl_struct" href="struct_operation.html">Operation</a> operation);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="manager_8h.html#ab63df320e8f1816cfdf99878003cc483">getMaxTimeJob</a>(<a class="code hl_struct" href="struct_job.html">Job</a> job);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_struct" href="struct_operation_machine_node.html">OperationMachineNode</a>* addOperationMachine(<a class="code hl_struct" href="struct_operation_machine_node.html">OperationMachineNode</a>* operationMachines, <a class="code hl_struct" href="struct_operation_machine.html">OperationMachine</a> opMachine);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="manager_8h.html#a821ab02898d54b5d2e623ae40e752d11">getAverageTimeOperation</a>(<a class="code hl_struct" href="struct_operation.html">Operation</a> operation);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define MANAGERDEFINED 1</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_job_html"><div class="ttname"><a href="struct_job.html">Job</a></div><div class="ttdef"><b>Definition:</b> dataStructures.h:30</div></div>
-<div class="ttc" id="astruct_operation_html"><div class="ttname"><a href="struct_operation.html">Operation</a></div><div class="ttdef"><b>Definition:</b> dataStructures.h:15</div></div>
-<div class="ttc" id="astruct_operation_machine_html"><div class="ttname"><a href="struct_operation_machine.html">OperationMachine</a></div><div class="ttdef"><b>Definition:</b> dataStructures.h:4</div></div>
-<div class="ttc" id="astruct_operation_machine_node_html"><div class="ttname"><a href="struct_operation_machine_node.html">OperationMachineNode</a></div><div class="ttdef"><b>Definition:</b> dataStructures.h:9</div></div>
-<div class="ttc" id="astruct_operation_node_html"><div class="ttname"><a href="struct_operation_node.html">OperationNode</a></div><div class="ttdef"><b>Definition:</b> dataStructures.h:20</div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_struct" href="struct_operation_machine_node.html">OperationMachineNode</a>* <a class="code hl_function" href="manager_8h.html#abe1a82c8cc432a55db4534e5f1a0ab2b">addOperationMachine</a>(<a class="code hl_struct" href="struct_operation_machine_node.html">OperationMachineNode</a>* operationMachines, <a class="code hl_struct" href="struct_operation_machine.html">OperationMachine</a> opMachine);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="manager_8h.html#ad345bc713344ab9b14cb29b83ce2490d">   23</a></span><span class="preprocessor">#define MANAGERDEFINED 1</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adata_structures_8h_html"><div class="ttname"><a href="data_structures_8h.html">dataStructures.h</a></div></div>
+<div class="ttc" id="amanager_8h_html_a4a821de34a23a39458d1bb99d3aa452c"><div class="ttname"><a href="manager_8h.html#a4a821de34a23a39458d1bb99d3aa452c">removeOperation</a></div><div class="ttdeci">OperationNode * removeOperation(OperationNode *operations, char *name)</div><div class="ttdoc">Remover uma nova operação a uma linked list Operation.</div><div class="ttdef"><b>Definition:</b> manager.c:77</div></div>
+<div class="ttc" id="amanager_8h_html_a57a74351686dbaef9fc42b7971a8c5c7"><div class="ttname"><a href="manager_8h.html#a57a74351686dbaef9fc42b7971a8c5c7">addJob</a></div><div class="ttdeci">JobNode * addJob(JobNode *jobs, Job job)</div><div class="ttdoc">Adicionar um novo job a uma linked list Job.</div><div class="ttdef"><b>Definition:</b> manager.c:23</div></div>
+<div class="ttc" id="amanager_8h_html_a7db73c3fa59348a8625178249fce6973"><div class="ttname"><a href="manager_8h.html#a7db73c3fa59348a8625178249fce6973">changeOperationMachine</a></div><div class="ttdeci">OperationNode * changeOperationMachine(OperationNode *operations, char *name, int id, int time)</div><div class="ttdoc">Alterar o tempo de uma máquina especifico em uma operação.</div><div class="ttdef"><b>Definition:</b> manager.c:146</div></div>
+<div class="ttc" id="amanager_8h_html_a821ab02898d54b5d2e623ae40e752d11"><div class="ttname"><a href="manager_8h.html#a821ab02898d54b5d2e623ae40e752d11">getAverageTimeOperation</a></div><div class="ttdeci">float getAverageTimeOperation(Operation operation)</div><div class="ttdoc">Calcular o tempo das média das máquinas de uma operação.</div><div class="ttdef"><b>Definition:</b> manager.c:294</div></div>
+<div class="ttc" id="amanager_8h_html_ab5a5375ac4637303265396ccb55f3df3"><div class="ttname"><a href="manager_8h.html#ab5a5375ac4637303265396ccb55f3df3">addOperation</a></div><div class="ttdeci">OperationNode * addOperation(OperationNode *operations, Operation operation)</div><div class="ttdoc">Adicionar uma nova operação a uma linked list Operation.</div><div class="ttdef"><b>Definition:</b> manager.c:50</div></div>
+<div class="ttc" id="amanager_8h_html_ab63df320e8f1816cfdf99878003cc483"><div class="ttname"><a href="manager_8h.html#ab63df320e8f1816cfdf99878003cc483">getMaxTimeJob</a></div><div class="ttdeci">int getMaxTimeJob(Job job)</div><div class="ttdoc">Calcular o tempo máximo de execução de uma job.</div><div class="ttdef"><b>Definition:</b> manager.c:253</div></div>
+<div class="ttc" id="amanager_8h_html_abe1a82c8cc432a55db4534e5f1a0ab2b"><div class="ttname"><a href="manager_8h.html#abe1a82c8cc432a55db4534e5f1a0ab2b">addOperationMachine</a></div><div class="ttdeci">OperationMachineNode * addOperationMachine(OperationMachineNode *operationMachines, OperationMachine opMachine)</div><div class="ttdoc">Adicionar uma operação máquina.</div><div class="ttdef"><b>Definition:</b> manager.c:187</div></div>
+<div class="ttc" id="amanager_8h_html_ad4ba699858bd0f652a7ad29d4c0474a1"><div class="ttname"><a href="manager_8h.html#ad4ba699858bd0f652a7ad29d4c0474a1">getMinTimeJob</a></div><div class="ttdeci">int getMinTimeJob(Job job)</div><div class="ttdoc">Calcular o tempo minimo de execução de um job.</div><div class="ttdef"><b>Definition:</b> manager.c:213</div></div>
+<div class="ttc" id="amanager_8h_html_af50994250264ee1329c48c99ab5740dc"><div class="ttname"><a href="manager_8h.html#af50994250264ee1329c48c99ab5740dc">changeOperation</a></div><div class="ttdeci">OperationNode * changeOperation(OperationNode *operations, OperationMachineNode *machines, char *name)</div><div class="ttdoc">Alterar uma linked list operação-máquina de uma operação.</div><div class="ttdef"><b>Definition:</b> manager.c:117</div></div>
+<div class="ttc" id="astruct_job_html"><div class="ttname"><a href="struct_job.html">Job</a></div><div class="ttdoc">Estrutura de um job.</div><div class="ttdef"><b>Definition:</b> dataStructures.h:48</div></div>
+<div class="ttc" id="astruct_job_node_html"><div class="ttname"><a href="struct_job_node.html">JobNode</a></div><div class="ttdoc">Nó de um job na linked list.</div><div class="ttdef"><b>Definition:</b> dataStructures.h:57</div></div>
+<div class="ttc" id="astruct_operation_html"><div class="ttname"><a href="struct_operation.html">Operation</a></div><div class="ttdoc">Estrutura de uma operação.</div><div class="ttdef"><b>Definition:</b> dataStructures.h:24</div></div>
+<div class="ttc" id="astruct_operation_machine_html"><div class="ttname"><a href="struct_operation_machine.html">OperationMachine</a></div><div class="ttdoc">Estrutura de uma operação-máquina.</div><div class="ttdef"><b>Definition:</b> dataStructures.h:7</div></div>
+<div class="ttc" id="astruct_operation_machine_node_html"><div class="ttname"><a href="struct_operation_machine_node.html">OperationMachineNode</a></div><div class="ttdoc">Nó de uma operação-máquina na linked list.</div><div class="ttdef"><b>Definition:</b> dataStructures.h:15</div></div>
+<div class="ttc" id="astruct_operation_node_html"><div class="ttname"><a href="struct_operation_node.html">OperationNode</a></div><div class="ttdoc">Nó de uma operação na linked list.</div><div class="ttdef"><b>Definition:</b> dataStructures.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
