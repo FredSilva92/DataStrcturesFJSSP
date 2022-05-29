@@ -33,3 +33,6 @@ OperationNode* readOperationsFromFile(int id, char* fileName);
 
 void saveOperationMachinesToFile(Job job, char* fileName);
 OperationMachineNode* readOperationMachinesFromFile(int jobId, char* name, char* fileName);
+
+JobNode** getJobsFromTextFile(char* fileName, int size);
+void saveJobsOnTextFile(JobNode *table[], int size, char* fileName);

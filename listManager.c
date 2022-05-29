@@ -71,6 +71,7 @@ JobNode* removeJob(JobNode* jobs, int id) {
     
     if (ref != NULL) {
         previousOperation->next = ref->next;
+        ref->job.operations = removeOperations(ref->job.operations);
         free(ref);
     }
 
@@ -158,6 +159,25 @@ OperationNode* removeOperation(OperationNode* operations, char* name) {
     }
 
     return operations;
+};
+
+OperationNode* removeOperations(OperationNode* operations) {
+    
+    if (operations == NULL) {
+        return NULL;
+    }
+
+    OperationNode* ref = operations;
+
+    while (ref != NULL)
+    {
+        OperationNode* opToDelete = ref;
+        ref = ref->next;
+        
+        free(opToDelete);
+    }
+    
+    return NULL;
 };
 
 /**
@@ -256,6 +276,23 @@ OperationMachineNode* addOperationMachine(OperationMachineNode* operationMachine
     ref->next = newNode;
 
     return operationMachines;
+}
+
+OperationMachineNode* removeOperationMachine(OperationMachineNode* operationMachines) {
+    if (operationMachines == NULL) {
+        return NULL;
+    }
+
+    OperationMachineNode* ref = operationMachines;
+
+    while (ref != NULL)
+    {
+        OperationMachineNode* opToDelete = ref;
+        ref = ref->next;
+        free(opToDelete);
+    }
+    
+    return NULL;
 }
 
 /**

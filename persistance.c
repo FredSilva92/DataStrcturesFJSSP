@@ -8,6 +8,7 @@
 
 #include "persistance.h"
 #include "listManager.h"
+#include "hashManager.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -203,6 +204,153 @@ OperationMachineNode* readOperationMachinesFromFile(int jobId, char* name, char*
     closeFile(myFile);
 
     return machines;
+}
+
+JobNode** getJobsFromTextFile(char* fileName, int size) {
+    JobNode* hashTable[size];
+    FILE *myFile;
+
+    createHashTable(hashTable, size);
+
+    myFile = openFile(myFile, fileName, "rb");
+
+    char* text = (char*) malloc(sizeof(char));
+
+     while(fscanf(myFile, "%s\n", text) != EOF) {
+         printf("%s", text);
+
+         char *jobText = strtok(text, ";");
+         int id = atoi(jobText);
+
+        Job job = {id, NULL};
+
+        jobText = strtok(NULL, ";");
+        char* operationsText = (char*) malloc(sizeof(char)); 
+        strcpy(operationsText, jobText);
+        operationsText = strtok(operationsText, ",");
+
+        do {
+            char* opToLoad = (char*) malloc(sizeof(char));
+            strcpy(opToLoad, operationsText);
+            opToLoad = strtok(opToLoad, ":");
+
+            Operation* operation = (Operation*) malloc(sizeof(Operation));
+            operation->name = (char*) malloc(sizeof(char));
+            strcpy(operation->name, opToLoad);
+
+            opToLoad = strtok(NULL, ":");
+
+            char* opMachineToLoad = (char*) malloc(sizeof(char));
+            strcpy(opMachineToLoad, opToLoad);
+            opMachineToLoad = strtok(opMachineToLoad, "_");
+
+            do {
+                //do {
+                    char* opMachineValues = (char*) malloc(sizeof(char));
+                    strcpy(opMachineValues, opMachineToLoad);
+                    opMachineValues = strtok(opMachineValues, "-");
+
+                    OperationMachine* opMachine 
+                        = (OperationMachine*) malloc(sizeof(OperationMachine));
+
+                    opMachine->machineId = atoi(opMachineValues);
+                    opMachineValues = strtok(NULL, "-");
+                    opMachine->time = atoi(opMachineValues);
+
+                    operation->opMachines 
+                        = addOperationMachine(operation->opMachines, *opMachine);
+
+                    //free(opMachineValues);
+                    /*opMachineToLoad = strtok(opToLoad, "_");
+                } while((opMachineToLoad = strtok(NULL, "_")) != NULL);*/
+
+                //free(opMachineToLoad);
+            } while((opMachineToLoad = strtok(NULL, "_")) != NULL);
+
+            job.operations = addOperation(job.operations, *operation);
+            printf("asdasdas");
+            //free(opToLoad);
+
+            operationsText = strtok(jobText, ",");   
+        }
+        while ((operationsText = strtok(NULL, ",")) != NULL);
+      
+        
+        *hashTable = addHashJob(job, hashTable);
+
+        free(operationsText);
+    }
+
+    closeFile(myFile);
+
+    return *hashTable;
+}
+
+void saveJobsOnTextFile(JobNode *table[], int size, char* fileName) {
+    JobNode* hashTable[size];
+    FILE *myFile;
+    myFile = openFile(myFile, fileName, "wb");
+
+    for (int i = 0; i < size; i++) {
+        JobNode* ref = table[i];
+
+        
+
+        while (ref != NULL)
+        {
+            char* dataToSave = (char*) malloc(sizeof(char) * 100);
+            char* idText = (char*) malloc(sizeof(char));
+            sprintf(idText, "%d", ref->job.id);
+
+            strcat(dataToSave, idText);
+
+            OperationNode* opRef = ref->job.operations;
+
+            strcat(dataToSave, ";");
+
+            while (opRef != NULL)
+            {
+                strcat(dataToSave, opRef->operation.name);
+
+                strcat(dataToSave, ":");
+
+                OperationMachineNode* opMachRef = opRef->operation.opMachines;
+
+                while (opMachRef != NULL)
+                {
+                    char* valText = (char*) malloc(sizeof(char));
+                    sprintf(valText, "%d", opMachRef->operationMachine.machineId);
+
+                    strcat(dataToSave, valText);
+                    strcat(dataToSave, "-");
+
+                    sprintf(valText, "%d", opMachRef->operationMachine.time);
+                    strcat(dataToSave, valText);
+
+                    opMachRef = opMachRef->next;
+
+                    if (opMachRef != NULL) {
+                        strcat(dataToSave, "_");
+                    }
+                }
+
+                opRef = opRef->next;
+
+                if (opRef != NULL) {
+                    strcat(dataToSave, ",");
+                }
+            }
+            
+            free(idText);
+            ref = ref->next;
+
+            fprintf(myFile, "%s\n", dataToSave);
+        }
+        
+
+    }
+
+    closeFile(myFile);
 }
 
 /**

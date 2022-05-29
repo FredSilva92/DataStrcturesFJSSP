@@ -4,6 +4,7 @@
         "manager.h": "c",
         "__locale": "c",
         "__functional_base": "c",
-        "listmanager.h": "c"
+        "listmanager.h": "c",
+        "istream": "c"
     }
 }

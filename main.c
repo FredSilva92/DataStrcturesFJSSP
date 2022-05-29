@@ -17,6 +17,7 @@
 #define JOBS_FILE "Resources/jobs.bin"
 #define OPERATIONS_FILE "Resources/operations.bin"
 #define OPERATION_MACHINES_FILE "Resources/operation_machines.bin"
+#define DATA_TEXT "Resources/data.txt"
 
 int main() {
 
@@ -110,6 +111,42 @@ int main() {
         operationsFromFile = operationsFromFile->next;
     }*/
 
+    Operation op51 = {"o51", NULL};
+    
+    OperationMachineNode* newOpMachines2 = NULL;
+
+    OperationMachine om1o51 = {1, 6};
+    OperationMachine om2o51 = {3, 5};
+
+    OperationMachine om3o51 = {2, 4};
+    OperationMachine om4o51 = {4, 2};
+    
+    newOpMachines2 = addOperationMachine(newOpMachines2, om1o51);
+    newOpMachines2 = addOperationMachine(newOpMachines2, om2o51);
+    newOpMachines2 = addOperationMachine(newOpMachines2, om3o51);
+    newOpMachines2 = addOperationMachine(newOpMachines2, om4o51);
+
+    op51.opMachines = newOpMachines2;
+
+
+    Operation op52 = {"o52", NULL};
+    
+    OperationMachineNode* newOpMachines3 = NULL;
+
+    OperationMachine om1o52 = {1, 1};
+    OperationMachine om2o52 = {3, 3};
+
+    OperationMachine om3o52 = {2, 3};
+    OperationMachine om4o52 = {4, 2};
+    
+    newOpMachines3 = addOperationMachine(newOpMachines3, om1o52);
+    newOpMachines3 = addOperationMachine(newOpMachines3, om2o52);
+    newOpMachines3 = addOperationMachine(newOpMachines3, om3o52);
+    newOpMachines3 = addOperationMachine(newOpMachines3, om4o52);
+
+    op52.opMachines = newOpMachines3;
+
+
     JobNode* hashTable[HASH_TABLE_SIZE];
 
     createHashTable(hashTable, HASH_TABLE_SIZE);
@@ -126,12 +163,16 @@ int main() {
     *hashTable = removeHashJob(12, hashTable);
     *hashTable = removeHashJob(20, hashTable);*/
 
-   Operation op51 = {"o51", NULL};
-
    *hashTable = addOpOnJob(hashTable, op51, 92);
+   *hashTable = addOpOnJob(hashTable, op52, 92);
+   //*hashTable = addOpOnJob(hashTable, op51, 20);
    *hashTable = removeOpOnJob(hashTable, "o3", 12);
 
    *hashTable = editOpOnJob(hashTable, 12, "o2", 4, 5);
 
-    printf("Heelo");
+   int minProcessPlan = getMinTimeProcessPlan(hashTable, HASH_TABLE_SIZE);
+
+   //JobNode** jobTest = getJobsFromTextFile("Resources/data.txt", HASH_TABLE_SIZE); 
+
+    saveJobsOnTextFile(hashTable, HASH_TABLE_SIZE, DATA_TEXT);
 }

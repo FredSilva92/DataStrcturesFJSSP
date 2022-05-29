@@ -18,3 +18,5 @@ JobNode** removeOpOnJob(JobNode* table[], char* opName, int jobId);
 JobNode** changeOpOnJob(JobNode* table[]);
 
 JobNode** editOpOnJob(JobNode* table[], int jobId, char* opName, int machineId, int time);
+
+int getMinTimeProcessPlan(JobNode *table[], int size);

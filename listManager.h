@@ -12,9 +12,13 @@
 
     OperationNode* removeOperation(OperationNode* operations, char* name);
 
+    OperationNode* removeOperations(OperationNode* operations);
+
     OperationNode* changeOperation(OperationNode* operations, OperationMachineNode* machines, char* name);
 
     OperationNode* changeOperationMachine(OperationNode* operations, char* name, int id, int time);
+
+    OperationMachineNode* removeOperationMachine(OperationMachineNode* operationMachines);
 
     int getMinTimeJob(Job job);
 
