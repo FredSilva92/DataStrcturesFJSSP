@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EDA-TP1: /Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/main.c File Reference</title>
+<title>EDA-FJSSP: /Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">EDA-TP1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">EDA-FJSSP
    </div>
   </td>
  </tr>
@@ -78,91 +78,38 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="data_structures_8h_source.html">dataStructures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="persistance_8h_source.html">persistance.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="manager_8h_source.html">manager.h</a>&quot;</code><br />
+<code>#include &quot;dataStructures.h&quot;</code><br />
+<code>#include &quot;persistance.h&quot;</code><br />
+<code>#include &quot;listManager.h&quot;</code><br />
+<code>#include &quot;hashManager.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:af05bc60b46debb45dd5558ad07481bb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#af05bc60b46debb45dd5558ad07481bb4">JOBS_FILE</a>&#160;&#160;&#160;&quot;Resources/jobs.bin&quot;</td></tr>
+<tr class="memitem:af05bc60b46debb45dd5558ad07481bb4"><td class="memItemLeft" align="right" valign="top"><a id="af05bc60b46debb45dd5558ad07481bb4" name="af05bc60b46debb45dd5558ad07481bb4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>JOBS_FILE</b>&#160;&#160;&#160;&quot;Resources/jobs.bin&quot;</td></tr>
 <tr class="separator:af05bc60b46debb45dd5558ad07481bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58680ea6c01b5db19fa8bd208c23f8ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a58680ea6c01b5db19fa8bd208c23f8ed">OPERATIONS_FILE</a>&#160;&#160;&#160;&quot;Resources/operations.bin&quot;</td></tr>
+<tr class="memitem:a58680ea6c01b5db19fa8bd208c23f8ed"><td class="memItemLeft" align="right" valign="top"><a id="a58680ea6c01b5db19fa8bd208c23f8ed" name="a58680ea6c01b5db19fa8bd208c23f8ed"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OPERATIONS_FILE</b>&#160;&#160;&#160;&quot;Resources/operations.bin&quot;</td></tr>
 <tr class="separator:a58680ea6c01b5db19fa8bd208c23f8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bca7709e7006ac064dab75e8c8ba33b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a7bca7709e7006ac064dab75e8c8ba33b">OPERATION_MACHINES_FILE</a>&#160;&#160;&#160;&quot;Resources/operation_machines.bin&quot;</td></tr>
+<tr class="memitem:a7bca7709e7006ac064dab75e8c8ba33b"><td class="memItemLeft" align="right" valign="top"><a id="a7bca7709e7006ac064dab75e8c8ba33b" name="a7bca7709e7006ac064dab75e8c8ba33b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OPERATION_MACHINES_FILE</b>&#160;&#160;&#160;&quot;Resources/operation_machines.bin&quot;</td></tr>
 <tr class="separator:a7bca7709e7006ac064dab75e8c8ba33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001c1320bbf4019eff822d13ee252665"><td class="memItemLeft" align="right" valign="top"><a id="a001c1320bbf4019eff822d13ee252665" name="a001c1320bbf4019eff822d13ee252665"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DATA_TEXT</b>&#160;&#160;&#160;&quot;Resources/data.txt&quot;</td></tr>
+<tr class="separator:a001c1320bbf4019eff822d13ee252665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Ficheiro principal da aplicação, com os testes e as funções da aplicação. </p>
 <dl class="section author"><dt>Author</dt><dd>Pedro Silva @email <a href="#" onclick="location.href='mai'+'lto:'+'a20'+'72'+'1@a'+'lu'+'nos'+'.i'+'pca'+'.p'+'t'; return false;">a2072<span class="obfuscator">.nosp@m.</span>1@al<span class="obfuscator">.nosp@m.</span>unos.<span class="obfuscator">.nosp@m.</span>ipca<span class="obfuscator">.nosp@m.</span>.pt</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>31/03/2022 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/FredSilva92/EDA-TP1.git">https://github.com/FredSilva92/EDA-TP1.git</a> </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="af05bc60b46debb45dd5558ad07481bb4" name="af05bc60b46debb45dd5558ad07481bb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af05bc60b46debb45dd5558ad07481bb4">&#9670;&nbsp;</a></span>JOBS_FILE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define JOBS_FILE&#160;&#160;&#160;&quot;Resources/jobs.bin&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7bca7709e7006ac064dab75e8c8ba33b" name="a7bca7709e7006ac064dab75e8c8ba33b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bca7709e7006ac064dab75e8c8ba33b">&#9670;&nbsp;</a></span>OPERATION_MACHINES_FILE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OPERATION_MACHINES_FILE&#160;&#160;&#160;&quot;Resources/operation_machines.bin&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a58680ea6c01b5db19fa8bd208c23f8ed" name="a58680ea6c01b5db19fa8bd208c23f8ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58680ea6c01b5db19fa8bd208c23f8ed">&#9670;&nbsp;</a></span>OPERATIONS_FILE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OPERATIONS_FILE&#160;&#160;&#160;&quot;Resources/operations.bin&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<dl class="section date"><dt>Date</dt><dd>31/05/2022 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://github.com/FredSilva92/DataStrcturesFJSSP">https://github.com/FredSilva92/DataStrcturesFJSSP</a> </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3

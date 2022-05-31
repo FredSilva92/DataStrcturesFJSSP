@@ -1,48 +1,53 @@
 \hypertarget{data_structures_8h_source}{}\doxysection{data\+Structures.\+h}
 \label{data_structures_8h_source}\index{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/dataStructures.h@{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/dataStructures.h}}
-\mbox{\hyperlink{data_structures_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef DADOSGLOBAIS}}
 \DoxyCodeLine{3 }
 \DoxyCodeLine{7     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_machine}{OperationMachine}}\{}
-\DoxyCodeLine{8         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operation_machine_a88dfbdb1cb084f3d6b41bcaaf63f4552}{machineId}};}
-\DoxyCodeLine{9         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operation_machine_a42715f65f02da52edc5b22021d8ae670}{time}};}
-\DoxyCodeLine{10     \} \mbox{\hyperlink{data_structures_8h_a5ac0b514e4a80b9f1aee134ebceff6d7}{OperationMachine}};}
+\DoxyCodeLine{8         \textcolor{keywordtype}{int} machineId;}
+\DoxyCodeLine{9         \textcolor{keywordtype}{int} time;}
+\DoxyCodeLine{10     \} \mbox{\hyperlink{struct_operation_machine}{OperationMachine}};}
 \DoxyCodeLine{11 }
 \DoxyCodeLine{15     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}} \{}
-\DoxyCodeLine{16         \mbox{\hyperlink{struct_operation_machine}{OperationMachine}} \mbox{\hyperlink{struct_operation_machine_node_acb8d4564171faf5f634a6d4c7b60e163}{operationMachine}};}
-\DoxyCodeLine{17         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* \mbox{\hyperlink{struct_operation_machine_node_a00a188c2dc07b597fc4f8cc63154318a}{next}};}
-\DoxyCodeLine{18     \} \mbox{\hyperlink{data_structures_8h_a655cfd0c2ff94010062723ac4f3c0870}{OperationMachineNode}};}
+\DoxyCodeLine{16         \mbox{\hyperlink{struct_operation_machine}{OperationMachine}} operationMachine;}
+\DoxyCodeLine{17         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* next;}
+\DoxyCodeLine{18     \} \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}};}
 \DoxyCodeLine{19 }
 \DoxyCodeLine{23     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation}{Operation}}}
 \DoxyCodeLine{24     \{}
-\DoxyCodeLine{25         \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_operation_a5ac083a645d964373f022d03df4849c8}{name}};}
-\DoxyCodeLine{26         \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* \mbox{\hyperlink{struct_operation_a6e913302072a02a64addabad9e8415dc}{opMachines}};}
-\DoxyCodeLine{27     \} \mbox{\hyperlink{data_structures_8h_a482954e58a1aa24c2a67b81bb6d92d9c}{Operation}};}
+\DoxyCodeLine{25         \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{26         \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* opMachines;}
+\DoxyCodeLine{27     \} \mbox{\hyperlink{struct_operation}{Operation}};}
 \DoxyCodeLine{28 }
 \DoxyCodeLine{32     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_node}{OperationNode}} \{}
-\DoxyCodeLine{33         \mbox{\hyperlink{struct_operation}{Operation}} \mbox{\hyperlink{struct_operation_node_a3d4e46530b846439d68f2aa153d7a1b3}{operation}};}
-\DoxyCodeLine{34         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_node}{OperationNode}}* \mbox{\hyperlink{struct_operation_node_a2a9ce69f237bdd5e7a74b7a5e0cac577}{next}};}
-\DoxyCodeLine{35     \} \mbox{\hyperlink{data_structures_8h_a9dff984453bb39f4aa5b71d8ff900419}{OperationNode}};}
+\DoxyCodeLine{33         \mbox{\hyperlink{struct_operation}{Operation}} operation;}
+\DoxyCodeLine{34         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_node}{OperationNode}}* next;}
+\DoxyCodeLine{35     \} \mbox{\hyperlink{struct_operation_node}{OperationNode}};}
 \DoxyCodeLine{36 }
 \DoxyCodeLine{40     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_machine}{Machine}} \{}
-\DoxyCodeLine{41         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_machine_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
-\DoxyCodeLine{42         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_machine_ab97d9007d7a06ec07313724391358bb6}{isBusy}}; \textcolor{comment}{// 1 está disponivel, 0 está ocupada;}}
-\DoxyCodeLine{43     \} \mbox{\hyperlink{data_structures_8h_ac5435b96779b7d7659b398b8275b6cbf}{Machine}};}
+\DoxyCodeLine{41         \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{42         \textcolor{keywordtype}{int} isBusy; \textcolor{comment}{// 1 está disponivel, 0 está ocupada;}}
+\DoxyCodeLine{43     \} \mbox{\hyperlink{struct_machine}{Machine}};}
 \DoxyCodeLine{44 }
 \DoxyCodeLine{48     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job}{Job}} \{}
-\DoxyCodeLine{49         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_job_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
-\DoxyCodeLine{50         \mbox{\hyperlink{struct_operation_node}{OperationNode}}* \mbox{\hyperlink{struct_job_a4157bb21ef550da276b8a1c37751bd57}{operations}};}
-\DoxyCodeLine{51     \} \mbox{\hyperlink{data_structures_8h_a7f678ed7503a7b4211821d14323751d8}{Job}};}
+\DoxyCodeLine{49         \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{50         \mbox{\hyperlink{struct_operation_node}{OperationNode}}* operations;}
+\DoxyCodeLine{51     \} \mbox{\hyperlink{struct_job}{Job}};}
 \DoxyCodeLine{52 }
 \DoxyCodeLine{56     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_node}{JobNode}}}
 \DoxyCodeLine{57     \{}
-\DoxyCodeLine{58         \mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{struct_job_node_a6f877dd869f35a0465039c54009f32d7}{job}};}
-\DoxyCodeLine{59         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_node}{JobNode}}* \mbox{\hyperlink{struct_job_node_a5e403c4a2431f25ab7f4455c5dc5c2d2}{next}};}
-\DoxyCodeLine{60     \} \mbox{\hyperlink{data_structures_8h_a1c50e28aea6b85df931b2757040fa81d}{JobNode}};}
-\DoxyCodeLine{61     }
-\DoxyCodeLine{62 \textcolor{preprocessor}{\#define DADOSGLOBAIS 1}}
-\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{58         \mbox{\hyperlink{struct_job}{Job}} job;}
+\DoxyCodeLine{59         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_node}{JobNode}}* next;}
+\DoxyCodeLine{60     \} \mbox{\hyperlink{struct_job_node}{JobNode}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_hash_table}{JobHashTable}} \{}
+\DoxyCodeLine{63         \textcolor{keywordtype}{int} max;}
+\DoxyCodeLine{64         \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_node}{JobNode}}** jobTable;}
+\DoxyCodeLine{65     \} \mbox{\hyperlink{struct_job_hash_table}{JobHashTable}};}
+\DoxyCodeLine{66     }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define DADOSGLOBAIS 1}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

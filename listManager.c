@@ -161,6 +161,11 @@ OperationNode* removeOperation(OperationNode* operations, char* name) {
     return operations;
 };
 
+/**
+* @brief	Remover as operações todas de uma linked list Operation
+* @param	operations	Referência da head da linked list
+* @return	Referência da head da linked list
+*/
 OperationNode* removeOperations(OperationNode* operations) {
     
     if (operations == NULL) {
@@ -278,6 +283,11 @@ OperationMachineNode* addOperationMachine(OperationMachineNode* operationMachine
     return operationMachines;
 }
 
+/**
+* @brief	Remover uma operação-máquina de uma linked list OperationMachine
+* @param	operations	Referência da head da linked list
+* @return	Referência da head da linked list
+*/
 OperationMachineNode* removeOperationMachine(OperationMachineNode* operationMachines) {
     if (operationMachines == NULL) {
         return NULL;

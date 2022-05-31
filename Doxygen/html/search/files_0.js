@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['datastructures_2eh_0',['dataStructures.h',['../data_structures_8h.html',1,'']]]
+  ['main_2ec_0',['main.c',['../main_8c.html',1,'']]]
 ];

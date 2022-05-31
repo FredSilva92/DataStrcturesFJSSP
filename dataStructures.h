@@ -58,11 +58,6 @@
         Job job;
         struct JobNode* next;
     } JobNode;
-
-    typedef struct JobHashTable {
-        int max;
-        struct JobNode** jobTable;
-    } JobHashTable;
     
 #define DADOSGLOBAIS 1
 #endif

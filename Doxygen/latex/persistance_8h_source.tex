@@ -1,32 +1,35 @@
 \hypertarget{persistance_8h_source}{}\doxysection{persistance.\+h}
 \label{persistance_8h_source}\index{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.h@{/Users/fredericosilva/Documents/IPCA/Ano1/Semestre2/EDA/TP/persistance.h}}
-\mbox{\hyperlink{persistance_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{data_structures_8h}{dataStructures.h}}"{}}}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}dataStructures.h"{}}}
 \DoxyCodeLine{2 }
 \DoxyCodeLine{6 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_file}{JobFile}} \{}
-\DoxyCodeLine{7     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_job_file_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
-\DoxyCodeLine{8 \} \mbox{\hyperlink{persistance_8h_a26c88d957828aee55329497a30aff969}{JobFile}};}
+\DoxyCodeLine{7     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{8 \} \mbox{\hyperlink{struct_job_file}{JobFile}};}
 \DoxyCodeLine{9 }
 \DoxyCodeLine{13 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_file}{OperationFile}} \{}
-\DoxyCodeLine{14     \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_operation_file_a5ac083a645d964373f022d03df4849c8}{name}};}
-\DoxyCodeLine{15     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operation_file_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
-\DoxyCodeLine{16 \} \mbox{\hyperlink{persistance_8h_aa6ce52777d04f6cdc0eee6c1622624b7}{OperationFile}};}
+\DoxyCodeLine{14     \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{16 \} \mbox{\hyperlink{struct_operation_file}{OperationFile}};}
 \DoxyCodeLine{17 }
 \DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operation_machine_file}{OperationMachineFile}} \{}
-\DoxyCodeLine{22     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operation_machine_file_a314fdbd38dd45cce0beef41fd90f436e}{jobId}};}
-\DoxyCodeLine{23     \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_operation_machine_file_a5ac083a645d964373f022d03df4849c8}{name}};}
-\DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operation_machine_file_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
-\DoxyCodeLine{25     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operation_machine_file_a42715f65f02da52edc5b22021d8ae670}{time}};}
-\DoxyCodeLine{26 \} \mbox{\hyperlink{persistance_8h_ac1f3f2068edc864c1f553e3561439857}{OperationMachineFile}};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} jobId;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{char}* name;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} time;}
+\DoxyCodeLine{26 \} \mbox{\hyperlink{struct_operation_machine_file}{OperationMachineFile}};}
 \DoxyCodeLine{27 }
-\DoxyCodeLine{28 \textcolor{keywordtype}{void} \mbox{\hyperlink{persistance_8h_aad0586af08971fc8a5c90956df5b4a4e}{saveJobsToFile}}(\mbox{\hyperlink{struct_job_node}{JobNode}}* jobs, \textcolor{keywordtype}{char}* fileName);}
-\DoxyCodeLine{29 \mbox{\hyperlink{struct_job_node}{JobNode}}* \mbox{\hyperlink{persistance_8h_a58ceabe14be7f8078b3a68d459878e36}{readJobsFromFile}}(\textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{28 \textcolor{keywordtype}{void} saveJobsToFile(\mbox{\hyperlink{struct_job_node}{JobNode}}* jobs, \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{29 \mbox{\hyperlink{struct_job_node}{JobNode}}* readJobsFromFile(\textcolor{keywordtype}{char}* fileName);}
 \DoxyCodeLine{30 }
-\DoxyCodeLine{31 \textcolor{keywordtype}{void} \mbox{\hyperlink{persistance_8h_a59d3e12c96a28db6c7f6017d84902f3c}{saveOperationsToFile}}(\mbox{\hyperlink{struct_job}{Job}} job, \textcolor{keywordtype}{char}* fileName);}
-\DoxyCodeLine{32 \mbox{\hyperlink{struct_operation_node}{OperationNode}}* \mbox{\hyperlink{persistance_8h_ae1ac96528a1c406dd1e2b263f391fb3a}{readOperationsFromFile}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{31 \textcolor{keywordtype}{void} saveOperationsToFile(\mbox{\hyperlink{struct_job}{Job}} job, \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{32 \mbox{\hyperlink{struct_operation_node}{OperationNode}}* readOperationsFromFile(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{char}* fileName);}
 \DoxyCodeLine{33 }
-\DoxyCodeLine{34 \textcolor{keywordtype}{void} \mbox{\hyperlink{persistance_8h_a73ca6d5f023344e10cb68c54d8b29412}{saveOperationMachinesToFile}}(\mbox{\hyperlink{struct_job}{Job}} job, \textcolor{keywordtype}{char}* fileName);}
-\DoxyCodeLine{35 \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* \mbox{\hyperlink{persistance_8h_a5fc3dcb197831138600d79db3aff7a47}{readOperationMachinesFromFile}}(\textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} saveOperationMachinesToFile(\mbox{\hyperlink{struct_job}{Job}} job, \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{35 \mbox{\hyperlink{struct_operation_machine_node}{OperationMachineNode}}* readOperationMachinesFromFile(\textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \mbox{\hyperlink{struct_job_node}{JobNode}}** getJobsFromTextFile(\textcolor{keywordtype}{char}* fileName, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{38 \textcolor{keywordtype}{void} saveJobsOnTextFile(\mbox{\hyperlink{struct_job_node}{JobNode}} *table[], \textcolor{keywordtype}{int} size, \textcolor{keywordtype}{char}* fileName);}
 
 \end{DoxyCode}

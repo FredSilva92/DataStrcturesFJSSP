@@ -206,6 +206,12 @@ OperationMachineNode* readOperationMachinesFromFile(int jobId, char* name, char*
     return machines;
 }
 
+/**
+* @brief	Ler os jobs de um ficheiro de texto
+* @param	fileName	Id do job onde estão as operações com as respectivas máquinas
+* @param	size	Tamanho da hash table
+* @return	Referência para a Hash Table com jobs carregados do ficheiro de texto
+*/
 JobNode** getJobsFromTextFile(char* fileName, int size) {
     JobNode* hashTable[size];
     FILE *myFile;
@@ -286,6 +292,13 @@ JobNode** getJobsFromTextFile(char* fileName, int size) {
     return *hashTable;
 }
 
+/**
+* @brief	Armazenar os jobs num ficheiro de texto
+* @param	table	Referência para a hash table
+* @param	fileName	Id do job onde estão as operações com as respectivas máquinas
+* @param	size	Tamanho da hash table
+* @return	Referência para a Hash Table com jobs carregados do ficheiro de texto
+*/
 void saveJobsOnTextFile(JobNode *table[], int size, char* fileName) {
     JobNode* hashTable[size];
     FILE *myFile;

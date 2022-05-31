@@ -3,8 +3,8 @@
  * @file	main.c
  * @author	Pedro Silva
  * @email	a20721@alunos.ipca.pt
- * @date	31/03/2022
- * @see https://github.com/FredSilva92/EDA-TP1.git
+ * @date	31/05/2022
+ * @see     https://github.com/FredSilva92/DataStrcturesFJSSP
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -159,20 +159,20 @@ int main() {
     *hashTable = addHashJob(job6, hashTable);
     *hashTable = addHashJob(job7, hashTable);
     *hashTable = addHashJob(job8, hashTable);
-/*
+
     *hashTable = removeHashJob(12, hashTable);
-    *hashTable = removeHashJob(20, hashTable);*/
+    *hashTable = removeHashJob(20, hashTable);
 
    *hashTable = addOpOnJob(hashTable, op51, 92);
    *hashTable = addOpOnJob(hashTable, op52, 92);
-   //*hashTable = addOpOnJob(hashTable, op51, 20);
+   
    *hashTable = removeOpOnJob(hashTable, "o3", 12);
 
    *hashTable = editOpOnJob(hashTable, 12, "o2", 4, 5);
 
    int minProcessPlan = getMinTimeProcessPlan(hashTable, HASH_TABLE_SIZE);
 
-   //JobNode** jobTest = getJobsFromTextFile("Resources/data.txt", HASH_TABLE_SIZE); 
+   JobNode** jobTest = getJobsFromTextFile(DATA_TEXT, HASH_TABLE_SIZE); 
 
     saveJobsOnTextFile(hashTable, HASH_TABLE_SIZE, DATA_TEXT);
 }

@@ -10,20 +10,28 @@ Ficheiro principal da aplicação, com os testes e as funções da aplicação.
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}data\+Structures.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}persistance.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}list\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash\+Manager.\+h\char`\"{}}\newline
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{main_8c_af05bc60b46debb45dd5558ad07481bb4}{JOBS\+\_\+\+FILE}}~\char`\"{}Resources/jobs.\+bin\char`\"{}
+\mbox{\Hypertarget{main_8c_af05bc60b46debb45dd5558ad07481bb4}\label{main_8c_af05bc60b46debb45dd5558ad07481bb4}} 
+\#define {\bfseries JOBS\+\_\+\+FILE}~\char`\"{}Resources/jobs.\+bin\char`\"{}
 \item 
-\#define \mbox{\hyperlink{main_8c_a58680ea6c01b5db19fa8bd208c23f8ed}{OPERATIONS\+\_\+\+FILE}}~\char`\"{}Resources/operations.\+bin\char`\"{}
+\mbox{\Hypertarget{main_8c_a58680ea6c01b5db19fa8bd208c23f8ed}\label{main_8c_a58680ea6c01b5db19fa8bd208c23f8ed}} 
+\#define {\bfseries OPERATIONS\+\_\+\+FILE}~\char`\"{}Resources/operations.\+bin\char`\"{}
 \item 
-\#define \mbox{\hyperlink{main_8c_a7bca7709e7006ac064dab75e8c8ba33b}{OPERATION\+\_\+\+MACHINES\+\_\+\+FILE}}~\char`\"{}Resources/operation\+\_\+machines.\+bin\char`\"{}
+\mbox{\Hypertarget{main_8c_a7bca7709e7006ac064dab75e8c8ba33b}\label{main_8c_a7bca7709e7006ac064dab75e8c8ba33b}} 
+\#define {\bfseries OPERATION\+\_\+\+MACHINES\+\_\+\+FILE}~\char`\"{}Resources/operation\+\_\+machines.\+bin\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8c_a001c1320bbf4019eff822d13ee252665}\label{main_8c_a001c1320bbf4019eff822d13ee252665}} 
+\#define {\bfseries DATA\+\_\+\+TEXT}~\char`\"{}Resources/data.\+txt\char`\"{}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
 \end{DoxyCompactItemize}
 
 
@@ -34,38 +42,8 @@ Ficheiro principal da aplicação, com os testes e as funções da aplicação.
 Pedro Silva @email \href{mailto:a20721@alunos.ipca.pt}{\texttt{ a20721@alunos.\+ipca.\+pt}} 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-31/03/2022 
+31/05/2022 
 \end{DoxyDate}
 \begin{DoxySeeAlso}{See also}
-\href{https://github.com/FredSilva92/EDA-TP1.git}{\texttt{ https\+://github.\+com/\+Fred\+Silva92/\+EDA-\/\+TP1.\+git}} 
+\href{https://github.com/FredSilva92/DataStrcturesFJSSP}{\texttt{ https\+://github.\+com/\+Fred\+Silva92/\+Data\+Strctures\+FJSSP}} 
 \end{DoxySeeAlso}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{main_8c_af05bc60b46debb45dd5558ad07481bb4}\label{main_8c_af05bc60b46debb45dd5558ad07481bb4}} 
-\index{main.c@{main.c}!JOBS\_FILE@{JOBS\_FILE}}
-\index{JOBS\_FILE@{JOBS\_FILE}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{JOBS\_FILE}{JOBS\_FILE}}
-{\footnotesize\ttfamily \#define JOBS\+\_\+\+FILE~\char`\"{}Resources/jobs.\+bin\char`\"{}}
-
-\mbox{\Hypertarget{main_8c_a7bca7709e7006ac064dab75e8c8ba33b}\label{main_8c_a7bca7709e7006ac064dab75e8c8ba33b}} 
-\index{main.c@{main.c}!OPERATION\_MACHINES\_FILE@{OPERATION\_MACHINES\_FILE}}
-\index{OPERATION\_MACHINES\_FILE@{OPERATION\_MACHINES\_FILE}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{OPERATION\_MACHINES\_FILE}{OPERATION\_MACHINES\_FILE}}
-{\footnotesize\ttfamily \#define OPERATION\+\_\+\+MACHINES\+\_\+\+FILE~\char`\"{}Resources/operation\+\_\+machines.\+bin\char`\"{}}
-
-\mbox{\Hypertarget{main_8c_a58680ea6c01b5db19fa8bd208c23f8ed}\label{main_8c_a58680ea6c01b5db19fa8bd208c23f8ed}} 
-\index{main.c@{main.c}!OPERATIONS\_FILE@{OPERATIONS\_FILE}}
-\index{OPERATIONS\_FILE@{OPERATIONS\_FILE}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{OPERATIONS\_FILE}{OPERATIONS\_FILE}}
-{\footnotesize\ttfamily \#define OPERATIONS\+\_\+\+FILE~\char`\"{}Resources/operations.\+bin\char`\"{}}
-
-
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
-\index{main.c@{main.c}!main@{main}}
-\index{main@{main}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
