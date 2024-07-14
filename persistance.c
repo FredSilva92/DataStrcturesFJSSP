@@ -220,7 +220,7 @@ JobNode** getJobsFromTextFile(char* fileName, int size) {
 
     myFile = openFile(myFile, fileName, "rb");
 
-    char* text = (char*) malloc(sizeof(char));
+    char* text = (char*) malloc(sizeof(char));  //
 
      while(fscanf(myFile, "%s\n", text) != EOF) {
          printf("%s", text);

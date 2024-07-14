@@ -25,6 +25,12 @@ void createHashTable(JobNode *table[], int size) {
     }
 };
 
+void createHashTableMachines(MachineNode *table[], int size) {
+    for (int i = 0; i < size; i++) {
+        table[i] = NULL;
+    }
+};
+
 /**
 * @brief	Adicionar um job à hash table
 * @param	job	 Job que se pretende adicionar
@@ -55,6 +61,40 @@ JobNode** removeHashJob(int id, JobNode* table[]) {
     }
 
     table[index] = removeJob(table[index], id);
+
+    return *table;
+};
+
+/**
+* @brief	Adicionar um job à hash table
+* @param	job	 Job que se pretende adicionar
+* @param	table	Hast table
+* @return	Referência da hash table
+*/
+MachineNode** addHashMachine(Machine machine, MachineNode* table[]) {
+
+    int index = genHash(machine.id);
+
+    table[index] = addMachine(table[index], machine);
+   
+    return *table;
+};
+
+/**
+* @brief	Remover um job da hash table
+* @param	id	 id do job que se pretende remover
+* @param	job	 Job que se pretende adicionar
+* @return	Referência da hash table
+*/
+MachineNode** removeHashMachine(int id, MachineNode* table[]) {
+    
+    int index = genHash(id);
+
+    if (index < 0) {
+        return *table;
+    }
+
+    table[index] = removeMachine(table[index], id);
 
     return *table;
 };
@@ -159,3 +199,16 @@ int getMinTimeProcessPlan(JobNode *table[], int size) {
 
     return result;
 };
+
+void executeProcessPlan(Cell processPlan[][MAX_MACHINES], JobNode* jobHashTable[], MachineNode* machines, int time) {
+
+    for(int i = 0; i < time; i++) {
+        MachineNode* machineRef = machines;
+
+        while (machineRef != NULL)
+        {
+            
+        }
+        
+    }
+}

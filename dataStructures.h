@@ -39,8 +39,18 @@
      */
     typedef struct Machine {
         int id;
+        int currentTime;
         int isBusy; // 1 está disponivel, 0 está ocupada;
+        OperationMachine* currentMachine;
     } Machine;
+
+    /**
+     * @brief	Máquina
+     */
+    typedef struct MachineNode {
+        Machine machine;
+        struct Machine* next;
+    } MachineNode;
 
    /**
      * @brief	Estrutura de um job
@@ -58,6 +68,11 @@
         Job job;
         struct JobNode* next;
     } JobNode;
+
+    typedef struct Cell {
+        int machineId;
+        int currentTime;
+    } Cell;
     
 #define DADOSGLOBAIS 1
 #endif

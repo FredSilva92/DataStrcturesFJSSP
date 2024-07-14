@@ -14,6 +14,17 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+
+void createProcessPlan(Cell processPlan[][MAX_MACHINES], int time, int machines) {
+    Cell nullCell = *(Cell*) NULL;
+    
+    for (int i = 0; i < time; i++) {
+        for (int j = 0; j < machines; j++) {
+            processPlan[i][j] = nullCell;
+        }
+    }
+}
+
 /**
 * @brief	Adicionar um novo job a uma linked list Job
 * @param	jobs	Referência da head da linked list
@@ -22,6 +33,7 @@
 */
 JobNode* addJob(JobNode* jobs, Job job) {
     JobNode* newNode = (JobNode*) malloc(sizeof(JobNode));
+    //assert
     newNode->job = job;
 
     if (jobs == NULL) {
@@ -45,15 +57,10 @@ JobNode* removeJob(JobNode* jobs, int id) {
     if (jobs == NULL) {
         return NULL;
     }
-
     JobNode* ref = jobs;
-
     if (ref->job.id == id) {
-        
         jobs = jobs->next;
-
         free(ref);
-
         return jobs;
     }
 
@@ -77,6 +84,67 @@ JobNode* removeJob(JobNode* jobs, int id) {
 
     return jobs;
 };
+
+/**
+* @brief	Adicionar um novo job a uma linked list Job
+* @param	jobs	Referência da head da linked list
+* @param	job		Job a adicionar
+* @return	Referência da head da linked list
+*/
+MachineNode* addMachine(MachineNode* machines, Machine machine) {
+    MachineNode* newNode = (MachineNode*) malloc(sizeof(MachineNode));
+    //assert
+    newNode->machine = machine;
+
+    if (machines == NULL) {
+        machines = newNode;
+        return machines;
+    } 
+
+    MachineNode* ref = machines;
+
+    while (ref->next != NULL)
+    {
+        ref = ref->next;
+    }
+
+    ref->next = newNode;
+
+    return machines;
+};
+
+MachineNode* removeMachine(MachineNode* machines, int id) {
+    if (machines == NULL) {
+        return NULL;
+    }
+    MachineNode* ref = machines;
+    if (ref->machine.id == id) {
+        machines = machines->next;
+        free(ref);
+        return machines;
+    }
+
+    MachineNode* previousOperation;
+
+    while (ref != NULL)
+    {
+        previousOperation = ref;
+        ref = ref->next;
+
+         if (ref->machine.id == id) {
+             break;
+         }
+    }
+    
+    if (ref != NULL) {
+        previousOperation->next = ref->next;
+        free(ref);
+    }
+
+    return machines;
+};
+
+
 
 JobNode* getJob(JobNode* jobs, int id) {
     JobNode* job = NULL;

@@ -2,6 +2,8 @@
 
 #ifndef MANAGERDEFINED
 
+    #define MAX_MACHINES 4
+
     JobNode* addJob(JobNode* jobs, Job job);
 
     JobNode* removeJob(JobNode* jobs, int id);
@@ -19,6 +21,10 @@
     OperationNode* changeOperationMachine(OperationNode* operations, char* name, int id, int time);
 
     OperationMachineNode* removeOperationMachine(OperationMachineNode* operationMachines);
+
+    MachineNode* addMachine(MachineNode* machines, Machine machine);
+
+    MachineNode* removeMachine(MachineNode* machines, int id);
 
     int getMinTimeJob(Job job);
 

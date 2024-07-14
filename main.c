@@ -152,27 +152,41 @@ int main() {
     createHashTable(hashTable, HASH_TABLE_SIZE);
 
     *hashTable = addHashJob(job1, hashTable);
-    *hashTable = addHashJob(job2, hashTable);
+  /*  *hashTable = addHashJob(job2, hashTable);
     *hashTable = addHashJob(job3, hashTable);
-    *hashTable = addHashJob(job4, hashTable);
+    *hashTable = addHashJob(job4, hashTable);*/
     *hashTable = addHashJob(job5, hashTable);
-    *hashTable = addHashJob(job6, hashTable);
+    /**hashTable = addHashJob(job6, hashTable);
     *hashTable = addHashJob(job7, hashTable);
-    *hashTable = addHashJob(job8, hashTable);
+    *hashTable = addHashJob(job8, hashTable);*/
 
-    *hashTable = removeHashJob(12, hashTable);
-    *hashTable = removeHashJob(20, hashTable);
+    //*hashTable = removeHashJob(12, hashTable);
+    //*hashTable = removeHashJob(20, hashTable);
 
    *hashTable = addOpOnJob(hashTable, op51, 92);
    *hashTable = addOpOnJob(hashTable, op52, 92);
    
-   *hashTable = removeOpOnJob(hashTable, "o3", 12);
+   //*hashTable = removeOpOnJob(hashTable, "o3", 12);
 
-   *hashTable = editOpOnJob(hashTable, 12, "o2", 4, 5);
+  // *hashTable = editOpOnJob(hashTable, 12, "o2", 4, 5);
 
    int minProcessPlan = getMinTimeProcessPlan(hashTable, HASH_TABLE_SIZE);
 
    JobNode** jobTest = getJobsFromTextFile(DATA_TEXT, HASH_TABLE_SIZE); 
 
     saveJobsOnTextFile(hashTable, HASH_TABLE_SIZE, DATA_TEXT);
+
+    MachineNode* machines = NULL;
+
+    Machine machine1 = {1, 0, 0, NULL};
+    Machine machine2 = {2, 0, 0, NULL};
+    Machine machine3 = {3, 0, 0, NULL};
+    Machine machine4 = {4, 0, 0, NULL};
+
+    machines = addMachine(machines, machine1);
+    machines = addMachine(machines, machine2);
+    machines = addMachine(machines, machine3);
+    machines = addMachine(machines, machine4);
+
+    
 }
